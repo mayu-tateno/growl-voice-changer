@@ -43,12 +43,14 @@ module GrowlVoiceChanger
       g.skip_routes true
       g.assets false
       g.helper false
-      g.test_framework false
       g.test_framework :rspec,
         controller_specs: false,
         view_specs: false,
         helper_specs: false,
-        routing_specs: false
+        routing_specs: false,
+        request_specs: true,
+        model_spec: true,
+        fixtures: true
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
   end
