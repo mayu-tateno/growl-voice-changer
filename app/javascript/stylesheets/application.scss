@@ -1,2 +1,11 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+@font-face {
+  font-family: 'toronogritch';
+  src: url('../fonts/瀞ノグリッチ黒体H2.otf') format('opentype');
+}
+
+body {
+  font-family: 'toronogritch';
+}
