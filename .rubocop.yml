@@ -52,6 +52,9 @@ Metrics/MethodLength:
   CountComments: false
   Max: 20
 
+Metrics/BlockLength:
+  Max: 50
+
 # ABC sizeは緩めにする
 Metrics/AbcSize:
   Max: 30 # default 15
