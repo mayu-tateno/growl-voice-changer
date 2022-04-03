@@ -6,7 +6,7 @@ Rails.application.configure do
     Bullet.alert         = true
     Bullet.bullet_logger = true
     Bullet.console       = true
-  # Bullet.growl         = true
+    # Bullet.growl         = true
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
   end
@@ -26,7 +26,7 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 

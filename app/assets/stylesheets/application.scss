@@ -1,0 +1,15 @@
+.top-wrapper {
+  background-image: image-url('top_image.jpg');
+  max-width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top-contents {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
