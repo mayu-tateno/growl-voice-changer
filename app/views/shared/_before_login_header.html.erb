@@ -1,5 +1,5 @@
 <header>
-  <nav class='navbar navbar-expand-lg sticky-top navbar-light' style='background-color: #f40000'>
+  <nav class='navbar navbar-expand-lg fixed-top navbar-light' style='background-color: #f40000'>
     <div class='container-fluid'>
       <%= link_to 'デスボイスチェンジャー', root_path, class: 'navbar-brand' %>
       <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
@@ -14,7 +14,7 @@
           </li>
           <li class='nav-item'>
             <%= link_to '#', class: 'nav-link' do %>
-              <i class='fas fa-list-ul'></i>投稿一覧
+              <i class='fas fa-list-ul'></i>一覧
             <% end %>
           <li class='nav-item'>
             <%= link_to '#', class: 'nav-link' do %>
