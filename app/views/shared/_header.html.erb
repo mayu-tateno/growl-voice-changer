@@ -24,16 +24,11 @@
           </li>
           <li class='nav-item'>
             <%= link_to '#', class: 'nav-link' do %>
-              <i class="fas fa-star"></i>お気に入り
+              <i class="fas fa-user-circle"></i>アカウント
             <% end %>
           </li>
           <li class='nav-item'>
-            <%= link_to '#', class: 'nav-link' do %>
-              <i class="fas fa-user-circle"></i>アカウント設定
-            <% end %>
-          </li>
-          <li class='nav-item'>
-            <%= link_to '#', class: 'nav-link' do %>
+            <%= link_to logout_path, class: 'nav-link', method: :delete do %>
               <i class="fas fa-sign-out-alt"></i>ログアウト
             <% end %>
           </li>
