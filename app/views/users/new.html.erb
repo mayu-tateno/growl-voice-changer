@@ -1,7 +1,7 @@
 <div class="container-fluid py-5 bg-dark text-white">
   <div class="row">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-3">
-      <h1>ユーザー登録</h1>
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-5">
+      <h1  class="text-center">ユーザー登録</h1>
       <%= form_with model: @user, local: true do |f| %>
         <div class="form-group">
           <%= f.label :name %>
@@ -23,7 +23,7 @@
       <% end %>
 
       <div class="text-center">
-        <%= link_to 'ログインページ', '#', class: 'text-white text-decoration-none' %>
+        <%= link_to 'ログインページ', login_path, class: 'text-white text-decoration-none' %>
       </div>
     </div>
   </div>
