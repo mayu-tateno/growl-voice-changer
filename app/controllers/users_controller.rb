@@ -5,10 +5,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     if @user.save
-      auto_login(@user)
-      redierct_to root_url
+      # auto_login(@user)
+      redirect_to root_url
     else
       render :new
     end
