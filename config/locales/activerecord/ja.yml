@@ -8,3 +8,10 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         name: '名前'
+        role: '権限'
+
+  enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
