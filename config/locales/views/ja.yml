@@ -16,9 +16,15 @@ ja:
       title: 'ユーザー登録'
       to_login_page: 'ログインページ'
       register_button: '登録する'
-  user_sessioins:
-    new:
-      title: 'ログイン'
+    create:
+      success: 'ユーザー登録しました'
+      failed: 'ユーザー登録に失敗しました'
+  user_sessions:
+    create:
+      success: 'ログインしました'
+      failed: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
   static_pages:
     top:
       to_change_page: '加工する！'
