@@ -3,6 +3,10 @@ html, body {
   min-height: 100%;
 }
 
+body {
+  padding-top: 56px;
+}
+
 .top-wrapper {
   background-image: image-url('top_image.jpg');
   max-width: 100%;
