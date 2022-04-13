@@ -1,21 +1,21 @@
 <div class="container-fluid py-5 bg-dark text-white">
   <div class="row">
     <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-5">
-      <h1 class="text-center">ログイン</h1>
+      <h1 class="text-center"><%= (t 'defaults.login') %></h1>
       <%= form_with url: login_url, local: true do |f| %>
         <div class="form-group">
-          <%= f.label :email %>
+          <%= f.label :email, User.human_attribute_name(:email) %>
           <%= f.text_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :password %>
+          <%= f.label :password, User.human_attribute_name(:password) %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
-        <%= f.submit 'ログイン', class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>
+        <%= f.submit (t 'defaults.login'), class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>
       <% end %>
 
       <div class="text-center">
-        <%= link_to '新規登録', new_user_path, class: 'text-white text-decoration-none' %>
+        <%= link_to (t 'defaults.register'), new_user_path, class: 'text-white text-decoration-none' %>
       </div>
     </div>
   </div>

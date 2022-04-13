@@ -1,13 +1,13 @@
 <footer class="fotter-bottom bg-dark fixed-bottom">
   <div class="container-fluid text-white text-center pt-1">
     <div class="row">
-      <%= link_to '利用規約', '#', class: 'text-white p-1 col text-decoration-none' %>
-      <%= link_to 'プライバシーポリシー', '#', class: 'text-white p-1 col text-decoration-none' %>
-      <%= link_to 'お問合せ', '#', class: 'text-white p-1 col text-decoration-none' %>
+      <%= link_to (t 'defaults.terms_of_services'), '#', class: 'text-white p-1 col text-decoration-none' %>
+      <%= link_to (t 'defaults.privacy_policy'), '#', class: 'text-white p-1 col text-decoration-none' %>
+      <%= link_to (t 'defaults.inquiry'), '#', class: 'text-white p-1 col text-decoration-none' %>
     </div>
     <div class="row">
       <div class="text-white text-center col-12">
-        <p>Copyright © 2022. デスボイスチェンジャー</p>
+        <p><%= (t 'defaults.copyright') %></p>
       </div>
     </div>
   </div>

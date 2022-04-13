@@ -1,0 +1,31 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '新規登録'
+    logout: 'ログアウト'
+    recording: '加工する'
+    list: 'デスボ一覧'
+    my_growl_voice: 'マイデスボ'
+    account: 'アカウント'
+    terms_of_services: '利用規約'
+    privacy_policy: 'プライバシーポリシー'
+    inquiry: 'お問い合わせ'
+    copyright: 'Copyright © 2022. デスボイスチェンジャー'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページ'
+      register_button: '登録する'
+    create:
+      success: 'ユーザー登録しました'
+      failed: 'ユーザー登録に失敗しました'
+  user_sessions:
+    create:
+      success: 'ログインしました'
+      failed: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  static_pages:
+    top:
+      to_change_page: '加工する！'
+      to_list: 'デスボ一覧'

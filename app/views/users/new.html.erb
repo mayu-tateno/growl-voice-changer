@@ -1,22 +1,23 @@
 <div class="container-fluid py-5 bg-dark text-white">
   <div class="row">
     <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-5">
-      <h1  class="text-center">ユーザー登録</h1>
+      <h1  class="text-center"><%= (t '.title') %></h1>
       <%= form_with model: @user, local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
-          <%= f.label :name %>
+          <%= f.label :name, User.human_attribute_name(:name) %>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :email %>
+          <%= f.label :email, User.human_attribute_name(:email) %>
           <%= f.text_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :password %>
+          <%= f.label :password, User.human_attribute_name(:password) %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :password_confirmation %>
+          <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
         <%= f.submit '登録する', class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>

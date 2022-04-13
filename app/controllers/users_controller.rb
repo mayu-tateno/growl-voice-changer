@@ -8,8 +8,9 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      redirect_to root_url
+      redirect_to root_url, dark: t('.success')
     else
+      flash.now[:danger] = t('.failed')
       render :new
     end
   end
