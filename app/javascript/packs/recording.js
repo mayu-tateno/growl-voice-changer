@@ -160,6 +160,8 @@ jsStopRecordingButton.onclick = function() {
   jsReplayButton.classList.remove('d-none');
 
   saveAudio();
+  jsPlayer.src = recordedBlobUrl;
+
   jsStartRecordingButton.disabled = false;
   jsStopRecordingButton.disabled = true;
   jsReplayButton.disabled = false;
@@ -170,8 +172,27 @@ jsReplayButton.onclick = function() {
     jsPlayer.src = recordedBlobUrl;
     jsPlayer.onended = function() {
       jsPlayer.pause();
-      jsPlayer.src = '';
     };
     jsPlayer.play();
   }
+};
+
+jsPlayer.onplay = function() {
+  jsReplayButton.classList.add('d-none');
+  jsStopReplayButton.classList.remove('d-none');
+
+  jsReplayButton.disabled = true;
+  jsStopReplayButton.disabled = false;
+};
+
+jsPlayer.onpause = function() {
+  jsReplayButton.classList.remove('d-none');
+  jsStopReplayButton.classList.add('d-none');
+
+  jsReplayButton.disabled = false;
+  jsStopReplayButton.disabled = true;
+};
+
+jsStopReplayButton.onclick = function() {
+  jsPlayer.pause();
 };
