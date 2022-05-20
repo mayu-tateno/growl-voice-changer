@@ -5,6 +5,7 @@ const jsReplayButton = document.getElementById('js-replay-button');
 const jsStopReplayButton = document.getElementById('js-stop-replay-button');
 const jsPlayer = document.getElementById('js-player');
 const jsDownLoardLink = document.getElementById('js-downloard-link');
+const jsRecordingState = document.getElementById('js-recording-state');
 
 let audioContext = null;
 let stream = null;
@@ -135,6 +136,7 @@ jsStartRecordingButton.onclick = function() {
 
   jsStartRecordingButton.classList.add('d-none');
   jsStopRecordingButton.classList.remove('d-none');
+  jsRecordingState.classList.remove('d-none');
 
   audioData = [];
   audioContext = new AudioContext();
@@ -158,6 +160,7 @@ jsStartRecordingButton.onclick = function() {
 jsStopRecordingButton.onclick = function() {
   jsStopRecordingButton.classList.add('d-none');
   jsReplayButton.classList.remove('d-none');
+  jsRecordingState.classList.add('d-none');
 
   saveAudio();
   jsPlayer.src = recordedBlobUrl;
