@@ -173,13 +173,7 @@ jsStopRecordingButton.onclick = function() {
 };
 
 jsReplayButton.onclick = function() {
-  if (recordedBlobUrl) {
-    jsPlayer.src = recordedBlobUrl;
-    jsPlayer.onended = function() {
-      jsPlayer.pause();
-    };
-    jsPlayer.play();
-  }
+  jsPlayer.play();
 };
 
 jsPlayer.onplay = function() {
