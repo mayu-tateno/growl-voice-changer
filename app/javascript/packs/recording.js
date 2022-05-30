@@ -150,12 +150,24 @@ jsStartRecordingButton.onclick = function() {
     audioSampleRate = audioContext.sampleRate;
     scriptProcessor = audioContext.createScriptProcessor(bufferSize, 2, 2);
 
-    const distortion = new Tone.Distortion(5);
-    const pitchshift = new Tone.PitchShift(-16);
-    const vibrato = new Tone.Vibrato(40, 0.1);
-    const compressor = new Tone.Compressor(-50, 4);
-    const tremolo = new Tone.Tremolo(500, 1);
-    const eq = new Tone.EQ3(40, -20, 55);
+    const distortionAmount = 5;
+    const pitch = -16;
+    const vibratoFrequency = 40;
+    const vibratoDepth = 0.1;
+    const threshold = -50;
+    const ratio = 4;
+    const tremoloFrequency = 500;
+    const tremoloDepth = 1;
+    const lowLevel = 40;
+    const midLevel = -20;
+    const highLevel = 55;
+
+    const distortion = new Tone.Distortion(distortionAmount);
+    const pitchshift = new Tone.PitchShift(pitch);
+    const vibrato = new Tone.Vibrato(vibratoFrequency, vibratoDepth);
+    const compressor = new Tone.Compressor(threshold, ratio);
+    const tremolo = new Tone.Tremolo(tremoloFrequency, tremoloDepth);
+    const eq = new Tone.EQ3(lowLevel, midLevel, highLevel);
     const convolver = new Tone.Convolver('../../../assets/1960-G12M25-SM57-Cone-0_5in.wav');
     const effectedStreamDestination = Tone.context.createMediaStreamDestination();
     micAudio.chain(pitchshift, tremolo, vibrato, distortion, eq, convolver, compressor, effectedStreamDestination);
