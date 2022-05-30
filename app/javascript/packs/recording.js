@@ -18,8 +18,6 @@ let scriptProcessor = null;
 let audioData = [];
 let timeout = null;
 let recordedBlobUrl = null;
-let micAudio = null;
-let effectedStream = null;
 
 function onAudioProcess(e) {
   let input = e.inputBuffer.getChannelData(0);
@@ -142,7 +140,7 @@ jsStartRecordingButton.onclick = function() {
   jsStopRecordingButton.classList.remove('d-none');
   jsRecordingState.classList.remove('d-none');
 
-  micAudio = new Tone.UserMedia();
+  const micAudio = new Tone.UserMedia();
   micAudio.open();
 
   micAudio.open().then(() => {
@@ -162,7 +160,7 @@ jsStartRecordingButton.onclick = function() {
     const effectedStreamDestination = Tone.context.createMediaStreamDestination();
     micAudio.chain(pitchshift, tremolo, vibrato, distortion, eq, convolver, compressor, effectedStreamDestination);
     
-    effectedStream = effectedStreamDestination.stream;
+    const effectedStream = effectedStreamDestination.stream;
     const effectedStreamSource = audioContext.createMediaStreamSource(effectedStream);
     effectedStreamSource.connect(scriptProcessor);
     
