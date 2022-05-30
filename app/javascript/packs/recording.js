@@ -144,7 +144,6 @@ jsStartRecordingButton.onclick = function() {
   micAudio.open();
 
   micAudio.open().then(() => {
-    console.log(micAudio);
     audioData = [];
     audioContext = new AudioContext();
     audioSampleRate = audioContext.sampleRate;
