@@ -1,3 +1,5 @@
+import * as Tone from 'tone';
+
 const jsPermitionButton = document.getElementById('js-mic-permition-button');
 const jsStartRecordingButton = document.getElementById('js-recording-start-button');
 const jsStopRecordingButton = document.getElementById('js-recording-stop-button');
@@ -13,7 +15,6 @@ let stream = null;
 let bufferSize = 1024;
 let audioSampleRate = null;
 let scriptProcessor = null;
-let mediaStreamSource = null;
 let audioData = [];
 let timeout = null;
 let recordedBlobUrl = null;
@@ -139,22 +140,55 @@ jsStartRecordingButton.onclick = function() {
   jsStopRecordingButton.classList.remove('d-none');
   jsRecordingState.classList.remove('d-none');
 
-  audioData = [];
-  audioContext = new AudioContext();
-  audioSampleRate = audioContext.sampleRate;
-  scriptProcessor = audioContext.createScriptProcessor(bufferSize, 2, 2);
-  mediaStreamSource = audioContext.createMediaStreamSource(stream);
-  mediaStreamSource.connect(scriptProcessor);
-  scriptProcessor.onaudioprocess = onAudioProcess;
-  scriptProcessor.connect(audioContext.destination);
+  const micAudio = new Tone.UserMedia();
+  micAudio.open();
 
-  timeout = setTimeout(() => {
-    jsStopRecordingButton.click();
-  }, 30000);
+  micAudio.open().then(() => {
+    audioData = [];
+    audioContext = new AudioContext();
+    audioSampleRate = audioContext.sampleRate;
+    scriptProcessor = audioContext.createScriptProcessor(bufferSize, 2, 2);
 
-  jsStopRecordingButton.addEventListener('click', () => {
-    clearTimeout(timeout);
-    console.log('録音停止しました');
+    const distortionAmount = 5;
+    const pitch = -16;
+    const vibratoFrequency = 40;
+    const vibratoDepth = 0.1;
+    const threshold = -50;
+    const ratio = 4;
+    const tremoloFrequency = 500;
+    const tremoloDepth = 1;
+    const lowLevel = 40;
+    const midLevel = -20;
+    const highLevel = 55;
+
+    const distortion = new Tone.Distortion(distortionAmount);
+    const pitchshift = new Tone.PitchShift(pitch);
+    const vibrato = new Tone.Vibrato(vibratoFrequency, vibratoDepth);
+    const compressor = new Tone.Compressor(threshold, ratio);
+    const tremolo = new Tone.Tremolo(tremoloFrequency, tremoloDepth);
+    const eq = new Tone.EQ3(lowLevel, midLevel, highLevel);
+    const convolver = new Tone.Convolver('../../../assets/1960-G12M25-SM57-Cone-0_5in.wav');
+    const effectedStreamDestination = Tone.context.createMediaStreamDestination();
+    micAudio.chain(pitchshift, tremolo, vibrato, distortion, eq, convolver, compressor, effectedStreamDestination);
+    
+    const effectedStream = effectedStreamDestination.stream;
+    const effectedStreamSource = audioContext.createMediaStreamSource(effectedStream);
+    effectedStreamSource.connect(scriptProcessor);
+    
+    scriptProcessor.onaudioprocess = onAudioProcess;
+    scriptProcessor.connect(audioContext.destination);
+
+    timeout = setTimeout(() => {
+      jsStopRecordingButton.click();
+    }, 30000);
+  
+    jsStopRecordingButton.addEventListener('click', () => {
+      clearTimeout(timeout);
+      console.log('録音停止しました');
+    });
+  }).catch(e => {
+    console.log('音声を加工・録音するプロセスに問題があります');
+    console.log(e);
   });
 };
 
@@ -202,6 +236,7 @@ jsResetButton.onclick = function() {
   jsStartRecordingButton.classList.remove('d-none');
   jsResetButton.classList.add('d-none');
   jsReplayButton.classList.add('d-none');
+  jsStopReplayButton.classList.add('d-none');
 
   jsStartRecordingButton.disabled = false;
   jsReplayButton.disabled = true;
