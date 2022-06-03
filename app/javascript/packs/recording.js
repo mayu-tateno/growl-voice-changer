@@ -167,7 +167,7 @@ jsStartRecordingButton.onclick = function() {
     const compressor = new Tone.Compressor(threshold, ratio);
     const tremolo = new Tone.Tremolo(tremoloFrequency, tremoloDepth);
     const eq = new Tone.EQ3(lowLevel, midLevel, highLevel);
-    const convolver = new Tone.Convolver('../../../assets/1960-G12M25-SM57-Cone-0_5in.wav');
+    const convolver = new Tone.Convolver('../../../../1960-G12M25-SM57-Cone-0_5in.wav');
     const effectedStreamDestination = Tone.context.createMediaStreamDestination();
     micAudio.chain(pitchshift, tremolo, vibrato, distortion, eq, convolver, compressor, effectedStreamDestination);
     
