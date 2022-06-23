@@ -6,7 +6,7 @@ const jsStopRecordingButton = document.getElementById('js-recording-stop-button'
 const jsReplayButton = document.getElementById('js-replay-button');
 const jsStopReplayButton = document.getElementById('js-stop-replay-button');
 const jsPlayer = document.getElementById('js-player');
-const jsDownLoardLink = document.getElementById('js-downloard-link');
+const jsDownLoardLink = document.getElementById('js-download-link');
 const jsRecordingState = document.getElementById('js-recording-state');
 const jsResetButton = document.getElementById('js-reset-button');
 
