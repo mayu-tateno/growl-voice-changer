@@ -20,7 +20,7 @@
     <%= form_with model: @voice, local: true do |f| %>
       <%= f.hidden_field :growl_voice %>
       <%= f.label :description %>
-      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.text_field :description, class: 'form-control', id: 'description-form' %>
     <% end %>
   </div>
   <% if logged_in? %>

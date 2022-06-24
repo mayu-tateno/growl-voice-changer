@@ -1,4 +1,7 @@
 import * as Tone from 'tone';
+import axios from 'axios';
+axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers['X-CSRF-TOKEN'] = document.getElementsByName('csrf-token')[0].getAttribute('content');
 
 const jsPermitionButton = document.getElementById('js-mic-permition-button');
 const jsStartRecordingButton = document.getElementById('js-recording-start-button');
@@ -9,6 +12,7 @@ const jsPlayer = document.getElementById('js-player');
 const jsDownLoardLink = document.getElementById('js-download-link');
 const jsRecordingState = document.getElementById('js-recording-state');
 const jsResetButton = document.getElementById('js-reset-button');
+const jsResultButton = document.getElementById('js-result-button');
 
 let audioContext = null;
 let stream = null;
@@ -240,4 +244,28 @@ jsResetButton.onclick = function() {
 
   jsStartRecordingButton.disabled = false;
   jsReplayButton.disabled = true;
+};
+
+jsResultButton.onclick = function() {
+  jsResultButton.disabled = true;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', document.querySelector('#js-download-link').href, true);
+  xhr.responseType = 'blob';
+  xhr.send();
+  xhr.onload = function() {
+    var myBlob = this.response;
+    let formData = new FormData();
+    formData.append('description', document.getElementById('description-form').value);
+    formData.append('growl_voice', myBlob, 'growl_voice.wav');
+    axios.post('/voices', formData, {
+      headers: {
+        'content-type': 'multipart/form-data',
+      }
+    }).then(response => {
+      let data = response.data;
+      window.location.href = data.url;
+    }).catch(error => {
+      console.log(error.response);
+    });
+  };
 };
