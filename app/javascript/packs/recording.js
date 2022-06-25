@@ -201,6 +201,7 @@ jsStopRecordingButton.onclick = function() {
   jsReplayButton.classList.remove('d-none');
   jsRecordingState.classList.add('d-none');
   jsResetButton.classList.remove('d-none');
+  jsResultButton.classList.remove('d-none');
 
   saveAudio();
   jsPlayer.src = recordedBlobUrl;
