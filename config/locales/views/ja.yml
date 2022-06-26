@@ -43,4 +43,5 @@ ja:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
       to_change_page: '加工する！'
-      to_list: 'デスボ一覧'
+      to_voices_list: 'デスボ一覧'
+      to_topics_list: 'お題一覧へ'
