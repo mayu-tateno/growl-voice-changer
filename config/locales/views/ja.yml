@@ -1,5 +1,6 @@
 ja:
   defaults:
+    app_name: 'デスボイスチェンジャー'
     login: 'ログイン'
     register: '新規登録'
     logout: 'ログアウト'
@@ -25,7 +26,21 @@ ja:
       failed: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  voices:
+    new:
+      title: '録音・加工する'
+      now_recording: 'Now Recording ...'
+      mic_permition: 'マイク許可'
+      recording_start: '録音開始'
+      recording_stop: '録音停止'
+      replay: '録音再生'
+      stop_replay: '再生停止'
+      reset: '取り直す'
+      save_as_logged_in_user: '保存してシェア画面へ'
+      signin_and_share: 'ユーザー登録してシェア'
+      share_only: 'ユーザー登録せずシェア'
   static_pages:
     top:
+      catch_phrase: 'デスボをあなたのとなりに'
       to_change_page: '加工する！'
       to_list: 'デスボ一覧'

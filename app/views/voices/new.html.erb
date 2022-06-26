@@ -1,19 +1,19 @@
 <div class="container-fluid bg-dark text-white">
-  <h1 class="text-center py-4">録音・加工する</h1>
+  <h1 class="text-center py-4"><%= (t '.title') %></h1>
   <div class="d-flex justify-content-center py-4">
     <audio id="js-player" controls></audio>
     <a id="js-download-link" type="hidden"></a>
   </div>
-  <div id="js-recording-state" class="text-center d-none">Now Recording ...</div>
+  <div id="js-recording-state" class="text-center d-none"><%= (t '.now_recording') %></div>
   <div class="d-flex justify-content-center py-2">
-    <button id="js-mic-permition-button" class="btn btn-primary rounded-pill">マイク許可</button>
-    <button id="js-recording-start-button" class="btn btn-primary rounded-pill d-none">録音開始</button>
-    <button id="js-recording-stop-button" class="btn btn-primary rounded-pill d-none">録音停止</button>
-    <button id="js-replay-button" class="btn btn-primary rounded-pill d-none">音声再生</button>
-    <button id="js-stop-replay-button" class="btn btn-primary rounded-pill d-none">再生停止</button>
+    <button id="js-mic-permition-button" class="btn btn-primary rounded-pill"><%= (t '.mic_permition') %></button>
+    <button id="js-recording-start-button" class="btn btn-primary rounded-pill d-none"><%= (t '.recording_start') %></button>
+    <button id="js-recording-stop-button" class="btn btn-primary rounded-pill d-none"><%= (t '.recording_stop') %></button>
+    <button id="js-replay-button" class="btn btn-primary rounded-pill d-none"><%= (t '.replay') %></button>
+    <button id="js-stop-replay-button" class="btn btn-primary rounded-pill d-none"><%= (t '.stop_replay') %></button>
   </div>
   <div class="d-flex justify-content-center py-2">
-    <button id="js-reset-button" class="btn btn-primary rounded-pill d-none">録り直す</button>
+    <button id="js-reset-button" class="btn btn-primary rounded-pill d-none"><%= (t '.reset') %></button>
   </div>
 
   <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
@@ -24,10 +24,10 @@
     <% end %>
   </div>
   <% if logged_in? %>
-    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none">保存してシェア画面へ</button>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.save_as_logged_in_user') %></button>
   <% else %>
-    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none">ユーザー登録してシェア</button>
-    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none">ユーザー登録せずシェア</button>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.signin_and_share') %></button>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.share_only') %></button>
   <% end %>
 </div>
 
