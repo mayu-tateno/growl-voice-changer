@@ -1,8 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #f40000">
     <div class="container-fluid">
-      <%= link_to 'デスボイスチェンジャー', root_path, class: 'navbar-brand' %>
-      <!--
+      <%= link_to (t 'defaults.app_name'), root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,8 +14,14 @@
           </li>
           <li class="nav-item">
             <%= link_to '#', class: 'nav-link' do %>
-              <i class="fas fa-list-ul"></i><%= (t 'defaults.list') %>
+              <i class="fas fa-list-ul"></i><%= (t 'defaults.voices_list') %>
             <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to '#', class: 'nav-link' do %>
+              <i class="fas fa-list-ul"></i><%= (t 'defaults.topics_list') %>
+            <% end %>
+          </li>
           <li class="nav-item">
             <%= link_to login_path, class: 'nav-link' do %>
               <i class="fas fa-sign-in-alt"></i><%= (t 'defaults.login') %>
@@ -29,7 +34,6 @@
           </li>
         </ul>
       </div>
-      -->
     </div>
   </nav>
 </header>
