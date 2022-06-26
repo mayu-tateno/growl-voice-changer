@@ -12,7 +12,7 @@ const jsPlayer = document.getElementById('js-player');
 const jsDownLoardLink = document.getElementById('js-download-link');
 const jsRecordingState = document.getElementById('js-recording-state');
 const jsResetButton = document.getElementById('js-reset-button');
-const jsResultButton = document.getElementById('js-result-button');
+const jsVoiceSaveButton = document.getElementById('js-voice-save-button');
 
 let audioContext = null;
 let stream = null;
@@ -201,7 +201,7 @@ jsStopRecordingButton.onclick = function() {
   jsReplayButton.classList.remove('d-none');
   jsRecordingState.classList.add('d-none');
   jsResetButton.classList.remove('d-none');
-  jsResultButton.classList.remove('d-none');
+  jsVoiceSaveButton.classList.remove('d-none');
 
   saveAudio();
   jsPlayer.src = recordedBlobUrl;
@@ -247,8 +247,8 @@ jsResetButton.onclick = function() {
   jsReplayButton.disabled = true;
 };
 
-jsResultButton.onclick = function() {
-  jsResultButton.disabled = true;
+jsVoiceSaveButton.onclick = function() {
+  jsVoiceSaveButton.disabled = true;
   var xhr = new XMLHttpRequest();
   xhr.open('GET', document.querySelector('#js-download-link').href, true);
   xhr.responseType = 'blob';
