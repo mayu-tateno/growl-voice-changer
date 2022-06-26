@@ -2,10 +2,10 @@
   <h1 class="text-center py-4">録音・加工する</h1>
   <div class="d-flex justify-content-center py-4">
     <audio id="js-player" controls></audio>
-    <a id="js-downloard-link" type="hidden"></a>
+    <a id="js-download-link" type="hidden"></a>
   </div>
   <div id="js-recording-state" class="text-center d-none">Now Recording ...</div>
-  <div class="d-flex justify-content-center py-4">
+  <div class="d-flex justify-content-center py-2">
     <button id="js-mic-permition-button" class="btn btn-primary rounded-pill">マイク許可</button>
     <button id="js-recording-start-button" class="btn btn-primary rounded-pill d-none">録音開始</button>
     <button id="js-recording-stop-button" class="btn btn-primary rounded-pill d-none">録音停止</button>
@@ -15,6 +15,20 @@
   <div class="d-flex justify-content-center py-2">
     <button id="js-reset-button" class="btn btn-primary rounded-pill d-none">録り直す</button>
   </div>
+
+  <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <%= form_with model: @voice, local: true do |f| %>
+      <%= f.hidden_field :growl_voice %>
+      <%= f.label :description, Voice.human_attribute_name(:description) %>
+      <%= f.text_field :description, class: 'form-control', id: 'description-form' %>
+    <% end %>
+  </div>
+  <% if logged_in? %>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none">保存してシェア画面へ</button>
+  <% else %>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none">ユーザー登録してシェア</button>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none">ユーザー登録せずシェア</button>
+  <% end %>
 </div>
 
 <%= javascript_pack_tag 'recording' %>

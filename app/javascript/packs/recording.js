@@ -1,4 +1,7 @@
 import * as Tone from 'tone';
+import axios from 'axios';
+axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers['X-CSRF-TOKEN'] = document.getElementsByName('csrf-token')[0].getAttribute('content');
 
 const jsPermitionButton = document.getElementById('js-mic-permition-button');
 const jsStartRecordingButton = document.getElementById('js-recording-start-button');
@@ -6,9 +9,10 @@ const jsStopRecordingButton = document.getElementById('js-recording-stop-button'
 const jsReplayButton = document.getElementById('js-replay-button');
 const jsStopReplayButton = document.getElementById('js-stop-replay-button');
 const jsPlayer = document.getElementById('js-player');
-const jsDownLoardLink = document.getElementById('js-downloard-link');
+const jsDownLoardLink = document.getElementById('js-download-link');
 const jsRecordingState = document.getElementById('js-recording-state');
 const jsResetButton = document.getElementById('js-reset-button');
+const jsVoiceSaveButton = document.getElementById('js-voice-save-button');
 
 let audioContext = null;
 let stream = null;
@@ -197,6 +201,7 @@ jsStopRecordingButton.onclick = function() {
   jsReplayButton.classList.remove('d-none');
   jsRecordingState.classList.add('d-none');
   jsResetButton.classList.remove('d-none');
+  jsVoiceSaveButton.classList.remove('d-none');
 
   saveAudio();
   jsPlayer.src = recordedBlobUrl;
@@ -240,4 +245,28 @@ jsResetButton.onclick = function() {
 
   jsStartRecordingButton.disabled = false;
   jsReplayButton.disabled = true;
+};
+
+jsVoiceSaveButton.onclick = function() {
+  jsVoiceSaveButton.disabled = true;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', document.querySelector('#js-download-link').href, true);
+  xhr.responseType = 'blob';
+  xhr.send();
+  xhr.onload = function() {
+    var myBlob = this.response;
+    let formData = new FormData();
+    formData.append('description', document.getElementById('description-form').value);
+    formData.append('growl_voice', myBlob, 'growl_voice.wav');
+    axios.post('/voices', formData, {
+      headers: {
+        'content-type': 'multipart/form-data',
+      }
+    }).then(response => {
+      let data = response.data;
+      window.location.href = data.url;
+    }).catch(error => {
+      console.log(error.response);
+    });
+  };
 };

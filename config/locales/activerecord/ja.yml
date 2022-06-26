@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      voice: '音声'
     attributes:
       user:
         email: 'メールアドレス'
@@ -9,9 +10,17 @@ ja:
         password_confirmation: 'パスワード確認'
         name: '名前'
         role: '権限'
+      voice:
+        growl_voice: 'デスボ'
+        description: '内容'
+        status: '公開状況'
 
   enums:
     user:
       role:
         general: '一般'
         admin: '管理者'
+    voice:
+      status:
+        open: '公開'
+        closed: '非公開'
