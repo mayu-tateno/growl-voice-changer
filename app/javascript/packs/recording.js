@@ -242,6 +242,7 @@ jsResetButton.onclick = function() {
   jsResetButton.classList.add('d-none');
   jsReplayButton.classList.add('d-none');
   jsStopReplayButton.classList.add('d-none');
+  jsVoiceSaveButton.classList.add('d-none');
 
   jsStartRecordingButton.disabled = false;
   jsReplayButton.disabled = true;
