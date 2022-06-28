@@ -7,7 +7,7 @@ class VoicesController < ApplicationController
     else
       random_value = SecureRandom.hex
       guest_user = User.create!(
-        name: "ゲストユーザー",
+        name: 'ゲストユーザー',
         email: "guest_#{random_value}@example.com",
         password: random_value,
         password_confirmation: random_value,
