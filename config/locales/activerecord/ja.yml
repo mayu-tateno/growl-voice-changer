@@ -20,6 +20,7 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+        guest: 'ゲスト'
     voice:
       status:
         open: '公開'
