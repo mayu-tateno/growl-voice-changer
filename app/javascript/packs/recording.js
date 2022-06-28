@@ -9,7 +9,7 @@ const jsStopRecordingButton = document.getElementById('js-recording-stop-button'
 const jsReplayButton = document.getElementById('js-replay-button');
 const jsStopReplayButton = document.getElementById('js-stop-replay-button');
 const jsPlayer = document.getElementById('js-player');
-const jsDownLoardLink = document.getElementById('js-download-link');
+const jsDownLoadLink = document.getElementById('js-download-link');
 const jsRecordingState = document.getElementById('js-recording-state');
 const jsResetButton = document.getElementById('js-reset-button');
 const jsVoiceSaveButton = document.getElementById('js-voice-save-button');
@@ -90,12 +90,12 @@ function exportWAV(audioData) {
 
   let myURL = window.URL || window.webkitURL;
   let url = myURL.createObjectURL(audioBlob);
-  jsDownLoardLink.href = url;
+  jsDownLoadLink.href = url;
 }
 
 function saveAudio() {
   exportWAV(audioData);
-  jsDownLoardLink.downloard = 'voice.wav';
+  jsDownLoadLink.downloard = 'voice.wav';
   audioContext.close().then(function() {
   });
 }
@@ -251,7 +251,7 @@ jsResetButton.onclick = function() {
 jsVoiceSaveButton.onclick = function() {
   jsVoiceSaveButton.disabled = true;
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', document.querySelector('#js-download-link').href, true);
+  xhr.open('GET', jsDownLoadLink.href, true);
   xhr.responseType = 'blob';
   xhr.send();
   xhr.onload = function() {
