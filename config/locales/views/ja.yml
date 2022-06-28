@@ -37,8 +37,7 @@ ja:
       stop_replay: '再生停止'
       reset: '取り直す'
       save_as_logged_in_user: '保存してシェア画面へ'
-      signin_and_share: 'ユーザー登録してシェア'
-      share_only: 'ユーザー登録せずシェア'
+      to_share: 'シェア画面へ'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
