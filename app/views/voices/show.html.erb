@@ -1,0 +1,32 @@
+<div class="container-fluid bg-dark text-white">
+  <div class="d-flex justify-content-center text-center">
+    <div>
+      <div class="mt-5 mb-4 h3">
+        <%= Voice.human_attribute_name(:description) %>
+      </div>
+      <div class="mb-4 h4 text-break">
+        <%= @voice.description %>
+      </div>
+      <div class="mb-4 h5 text-break">
+        <% unless @voice.user.role == "guest" %>
+          <%= (t '.by') %><%= @voice.user.name %>
+        <% end %>
+      </div>
+      <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
+      <% if logged_in? && @voice.user_id == current_user.id %>
+        <div class="m-3 d-flex justify-content-center">
+          <div class="mx-3">
+            <%= link_to '#' do %>
+              <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> <%= (t '.to_edit') %></button>
+            <% end %>
+          </div>
+          <div class="mx-3">
+            <%= link_to voice_path(@voice), method: :delete, data: { confirm: (t 'defaults.message.delete_confirm') } do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> <%= (t '.to_delete') %></button>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
