@@ -1,9 +1,9 @@
 class VoicesController < ApplicationController
+  before_action :set_voice, only: %[show]
+
   def new; end
 
-  def show
-    @voice = Voice.find(params[:id])
-  end
+  def show; end
 
   def create
     if logged_in?
@@ -28,6 +28,10 @@ class VoicesController < ApplicationController
   end
 
   private
+
+  def set_voice
+    @voice = Voice.find(params[:id])
+  end
 
   def voice_params
     params.permit(:growl_voice, :description)
