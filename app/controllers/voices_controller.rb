@@ -1,6 +1,10 @@
 class VoicesController < ApplicationController
   def new; end
 
+  def show
+    @voice = Voice.find(params[:id])
+  end
+
   def create
     if logged_in?
       voice = current_user.voices.build(voice_params)
@@ -17,7 +21,7 @@ class VoicesController < ApplicationController
     end
 
     if voice.save
-      render json: { url: root_url }
+      render json: { url: voice_path(voice) }
     else
       render json: { url: new_voice_path }
     end

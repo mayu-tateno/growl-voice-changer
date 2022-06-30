@@ -1,0 +1,18 @@
+<div class="container-fluid bg-dark text-white">
+  <div class="d-flex justify-content-center text-center">
+    <div class="">
+      <div class="mt-5 mb-4 h3">
+        <%= Voice.human_attribute_name(:description) %>
+      </div>
+      <div class="mb-4 h4 text-break">
+        <%= @voice.description %>
+      </div>
+      <div class="mb-4 h5 text-break">
+        <%= (t '.by') %><%= @voice.user.name %>
+      </div>
+      <div class="">
+        <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
+      </div>
+    </div>
+  </div>
+</div>
