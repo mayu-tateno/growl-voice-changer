@@ -15,6 +15,18 @@
       <div class="">
         <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
       </div>
+      <div class="m-3 d-flex justify-content-center">
+        <div class="mx-3">
+          <%= link_to '#' do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> 編集</button>
+          <% end %>
+        </div>
+        <div class="mx-3">
+          <%= link_to '#' do %>
+          <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> 削除</button>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
