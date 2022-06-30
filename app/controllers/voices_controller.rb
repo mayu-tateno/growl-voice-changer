@@ -27,6 +27,12 @@ class VoicesController < ApplicationController
     end
   end
 
+  def destroy
+    voice = current_user.voices.find(params[:id])
+    voice.destroy!
+    redirect_to root_url, dark: '音声を削除しました'
+  end
+
   private
 
   def set_voice
