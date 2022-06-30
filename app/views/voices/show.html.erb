@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark text-white">
   <div class="d-flex justify-content-center text-center">
-    <div class="">
+    <div>
       <div class="mt-5 mb-4 h3">
         <%= Voice.human_attribute_name(:description) %>
       </div>
@@ -12,9 +12,7 @@
           <%= (t '.by') %><%= @voice.user.name %>
         <% end %>
       </div>
-      <div class="">
-        <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
-      </div>
+      <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
       <div class="m-3 d-flex justify-content-center">
         <div class="mx-3">
           <%= link_to '#' do %>
