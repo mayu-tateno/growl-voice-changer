@@ -1,5 +1,5 @@
 class VoicesController < ApplicationController
-  before_action :set_voice, only: %(show)
+  before_action :set_voice, only: %i[show]
 
   def new; end
 
