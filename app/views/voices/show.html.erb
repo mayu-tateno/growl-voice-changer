@@ -21,7 +21,7 @@
             <% end %>
           </div>
           <div class="mx-3">
-            <%= link_to voice_path(@voice), method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+            <%= link_to voice_path(@voice), method: :delete, data: { confirm: (t 'defaults.message.delete_confirm') } do %>
             <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> <%= (t '.to_delete') %></button>
             <% end %>
           </div>

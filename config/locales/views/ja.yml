@@ -12,6 +12,9 @@ ja:
     privacy_policy: 'プライバシーポリシー'
     inquiry: 'お問い合わせ'
     copyright: 'Copyright © 2022. デスボイスチェンジャー'
+    message:
+      deleted: "%{item}を削除しました"
+      delete_confirm: '本当に削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
