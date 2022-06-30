@@ -13,18 +13,20 @@
         <% end %>
       </div>
       <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
-      <div class="m-3 d-flex justify-content-center">
-        <div class="mx-3">
-          <%= link_to '#' do %>
-            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> <%= (t '.to_edit') %></button>
-          <% end %>
+      <% if logged_in? && @voice.user_id == current_user.id %>
+        <div class="m-3 d-flex justify-content-center">
+          <div class="mx-3">
+            <%= link_to '#' do %>
+              <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> <%= (t '.to_edit') %></button>
+            <% end %>
+          </div>
+          <div class="mx-3">
+            <%= link_to '#' do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> <%= (t '.to_delete') %></button>
+            <% end %>
+          </div>
         </div>
-        <div class="mx-3">
-          <%= link_to '#' do %>
-          <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> <%= (t '.to_delete') %></button>
-        <% end %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
