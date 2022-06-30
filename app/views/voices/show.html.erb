@@ -18,12 +18,12 @@
       <div class="m-3 d-flex justify-content-center">
         <div class="mx-3">
           <%= link_to '#' do %>
-            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> 編集</button>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> <%= (t '.to_edit') %></button>
           <% end %>
         </div>
         <div class="mx-3">
           <%= link_to '#' do %>
-          <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> 削除</button>
+          <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i> <%= (t '.to_delete') %></button>
         <% end %>
         </div>
       </div>

@@ -40,6 +40,8 @@ ja:
       to_share: 'シェア画面へ'
     show:
       by: 'By '
+      to_edit: '編集'
+      to_delete: '削除'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
