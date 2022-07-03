@@ -1,5 +1,5 @@
 class VoicesController < ApplicationController
-  before_action :set_voice, only: %(show)
+  before_action :set_voice, only: %i[show]
 
   def new; end
 
@@ -27,6 +27,20 @@ class VoicesController < ApplicationController
     end
   end
 
+  def edit
+    @voice = current_user.voices.find(params[:id])
+  end
+
+  def update
+    @voice = current_user.voices.find(params[:id])
+    if @voice.update(voice_params_for_update)
+      redirect_to @voice, dark: t('defaults.message.updated', item: Voice.human_attribute_name(:description))
+    else
+      flash.now[:danger] = t('defaults.message.not_updated', item: Voice.human_attribute_name(:description))
+      render :edit
+    end
+  end
+
   def destroy
     voice = current_user.voices.find(params[:id])
     voice.destroy!
@@ -41,5 +55,9 @@ class VoicesController < ApplicationController
 
   def voice_params
     params.permit(:growl_voice, :description)
+  end
+
+  def voice_params_for_update
+    params.require(:voice).permit(:description)
   end
 end
