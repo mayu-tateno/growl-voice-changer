@@ -16,7 +16,7 @@
       <% if logged_in? && @voice.user_id == current_user.id %>
         <div class="m-3 d-flex justify-content-center">
           <div class="mx-3">
-            <%= link_to '#' do %>
+            <%= link_to edit_voice_path(@voice) do %>
               <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i> <%= (t '.to_edit') %></button>
             <% end %>
           </div>
