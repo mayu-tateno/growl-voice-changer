@@ -1,0 +1,18 @@
+<div class="container-fluid bg-dark text-white">
+  <p class="h2 py-4 d-flex justify-content-center text-center">編集</p>
+  <div class="d-flex justify-content-center">
+    <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-edit-page-player') %>
+  </div>
+  <div class="my-4 h5 text-break text-center">
+    <% unless @voice.user.role == "guest" %>
+      <%= (t '.by') %><%= @voice.user.name %>
+    <% end %>
+  </div>
+  <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <%= form_with model: @voice, local: true do |f| %>
+      <%= f.label :description, Voice.human_attribute_name(:description) %>
+      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.submit '更新する', class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>
+    <% end %>
+  </div>
+</div>

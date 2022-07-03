@@ -27,6 +27,10 @@ class VoicesController < ApplicationController
     end
   end
 
+  def edit
+    @voice = current_user.voices.find(params[:id])
+  end
+
   def destroy
     voice = current_user.voices.find(params[:id])
     voice.destroy!
