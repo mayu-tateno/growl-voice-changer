@@ -34,9 +34,9 @@ class VoicesController < ApplicationController
   def update
     @voice = current_user.voices.find(params[:id])
     if @voice.update(voice_params_for_update)
-      redirect_to @voice, dark: '内容を更新しました'
+      redirect_to @voice, dark: t('defaults.message.updated', item: Voice.human_attribute_name(:description))
     else
-      flash.now[:danger] = '内容を更新できませんでした'
+      flash.now[:danger] = t('defaults.message.not_updated', item: Voice.human_attribute_name(:description))
       render :edit
     end
   end

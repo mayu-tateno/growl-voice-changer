@@ -13,6 +13,8 @@ ja:
     inquiry: 'お問い合わせ'
     copyright: 'Copyright © 2022. デスボイスチェンジャー'
     message:
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '本当に削除しますか？'
   users:
@@ -45,6 +47,10 @@ ja:
       by: 'By '
       to_edit: '編集'
       to_delete: '削除'
+    edit:
+      title: '編集'
+      by: 'By'
+      update_button: '更新する'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
