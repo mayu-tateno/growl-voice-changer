@@ -9,7 +9,7 @@
       </div>
       <div class="mb-4 h5 text-break">
         <% unless @voice.user.role == "guest" %>
-          <%= (t '.by') %><%= @voice.user.name %>
+          <%= (t '.by') %> <%= @voice.user.name %>
         <% end %>
       </div>
       <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
