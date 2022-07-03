@@ -12,7 +12,7 @@
     <%= form_with model: @voice, local: true do |f| %>
       <%= f.label :description, Voice.human_attribute_name(:description) %>
       <%= f.text_field :description, class: 'form-control' %>
-      <%= f.submit '更新する', class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>
+      <%= f.submit '更新する', class: 'btn btn-primary d-block mx-auto rounded-pill my-3' %>
     <% end %>
   </div>
 </div>
