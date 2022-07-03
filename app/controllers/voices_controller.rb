@@ -31,6 +31,16 @@ class VoicesController < ApplicationController
     @voice = current_user.voices.find(params[:id])
   end
 
+  def update
+    @voice = current_user.voices.find(params[:id])
+    if @voice.update(voice_params_for_update)
+      redirect_to @voice, dark: '内容を更新しました'
+    else
+      flash.now[:danger] = '内容を更新できませんでした'
+      render :edit
+    end
+  end
+
   def destroy
     voice = current_user.voices.find(params[:id])
     voice.destroy!
@@ -45,5 +55,9 @@ class VoicesController < ApplicationController
 
   def voice_params
     params.permit(:growl_voice, :description)
+  end
+
+  def voice_params_for_update
+    params.require(:voice).permit(:description)
   end
 end
