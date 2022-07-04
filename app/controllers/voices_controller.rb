@@ -17,7 +17,7 @@ class VoicesController < ApplicationController
         password_confirmation: random_value,
         role: :guest
       )
-      voice = guest_user.voices.build(voice_params)
+      voice = guest_user.voices.build(voice_params.merge(status: :closed))
     end
 
     if voice.save
