@@ -48,7 +48,7 @@ class VoicesController < ApplicationController
   def destroy
     voice = current_user.voices.find(params[:id])
     voice.destroy!
-    redirect_to root_url, dark: t('defaults.message.deleted', item: Voice.model_name.human)
+    redirect_to voices_path, dark: t('defaults.message.deleted', item: Voice.model_name.human)
   end
 
   private
