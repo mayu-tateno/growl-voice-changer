@@ -6,7 +6,9 @@
       <% else %>
         <p><%= (t '.voice_not_found_message') %></p>
       <% end %>
-      <%== pagy_nav(@pagy) %>
+      <div class="d-flex justify-content-center mt-3">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
     </div>
   </div>
 </div>
