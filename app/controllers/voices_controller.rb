@@ -5,6 +5,10 @@ class VoicesController < ApplicationController
 
   def show; end
 
+  def index
+    @voices = Voice.where(status: :open).includes(:user).order(created_at: :desc)
+  end
+
   def create
     if logged_in?
       voice = current_user.voices.build(voice_params)
