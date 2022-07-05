@@ -4,7 +4,7 @@
       <% if @voices.present? %>
         <%= render @voices %>
       <% else %>
-        <p>まだ投稿音声がありません</p>
+        <p><%= (t '.voice_not_found_message') %></p>
       <% end %>
     </div>
   </div>
