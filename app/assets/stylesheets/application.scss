@@ -28,3 +28,16 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.bg-gray-color {
+  background-color: rgb(48, 48, 59) !important;
+}
+
+.pagination>li>a {
+  border: none;
+  background-color: rgb(48, 48, 59) !important;
+}
+
+.pagination>.active>a {
+  background-color: #f40000 !important;
+}

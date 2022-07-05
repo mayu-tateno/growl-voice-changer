@@ -1,0 +1,14 @@
+<div class="container-fluid bg-dark text-white">
+  <div class="col-10 offset-1 py-5 d-flex justify-content-center text-center">
+    <div class="row col-12">
+      <% if @voices.present? %>
+        <%= render @voices %>
+      <% else %>
+        <p><%= (t '.voice_not_found_message') %></p>
+      <% end %>
+      <div class="d-flex justify-content-center mt-3">
+        <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+      </div>
+    </div>
+  </div>
+</div>

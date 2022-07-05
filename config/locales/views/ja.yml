@@ -12,6 +12,7 @@ ja:
     privacy_policy: 'プライバシーポリシー'
     inquiry: 'お問い合わせ'
     copyright: 'Copyright © 2022. デスボイスチェンジャー'
+    by: 'By '
     message:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"
@@ -44,13 +45,13 @@ ja:
       save_as_logged_in_user: '保存してシェア画面へ'
       to_share: 'シェア画面へ'
     show:
-      by: 'By'
       to_edit: '編集'
       to_delete: '削除'
     edit:
       title: '編集'
-      by: 'By'
       update_button: '更新する'
+    index:
+      voice_not_found_message: 'まだ投稿音声がありません'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'

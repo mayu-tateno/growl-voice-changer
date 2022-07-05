@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="m-2">
+    <div class="voice-id-<%= voice.id %>">
+      <%= link_to voice_path(voice), class: 'text-decoration-none' do %>
+        <div class="card bg-gray-color text-white border-dark p-3">
+          <div class="card-body">
+            <h4 class="card-title"><%= voice.description %></h4>
+            <% unless voice.user.role == "guest" %>
+              <p class="card-text"><%= (t 'defaults.by') %><%= voice.user.name %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

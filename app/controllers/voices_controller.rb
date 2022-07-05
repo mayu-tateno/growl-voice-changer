@@ -5,6 +5,10 @@ class VoicesController < ApplicationController
 
   def show; end
 
+  def index
+    @pagy, @voices = pagy(Voice.where(status: :open).includes(:user).order(created_at: :desc))
+  end
+
   def create
     if logged_in?
       voice = current_user.voices.build(voice_params)
@@ -17,7 +21,7 @@ class VoicesController < ApplicationController
         password_confirmation: random_value,
         role: :guest
       )
-      voice = guest_user.voices.build(voice_params)
+      voice = guest_user.voices.build(voice_params.merge(status: :closed))
     end
 
     if voice.save
@@ -44,7 +48,7 @@ class VoicesController < ApplicationController
   def destroy
     voice = current_user.voices.find(params[:id])
     voice.destroy!
-    redirect_to root_url, dark: t('defaults.message.deleted', item: Voice.model_name.human)
+    redirect_to voices_path, dark: t('defaults.message.deleted', item: Voice.model_name.human)
   end
 
   private
