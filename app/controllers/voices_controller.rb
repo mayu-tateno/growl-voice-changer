@@ -6,7 +6,7 @@ class VoicesController < ApplicationController
   def show; end
 
   def index
-    @voices = Voice.where(status: :open).includes(:user).order(created_at: :desc)
+    @pagy, @voices = pagy(Voice.where(status: :open).includes(:user).order(created_at: :desc))
   end
 
   def create
