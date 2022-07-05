@@ -12,6 +12,7 @@ ja:
     privacy_policy: 'プライバシーポリシー'
     inquiry: 'お問い合わせ'
     copyright: 'Copyright © 2022. デスボイスチェンジャー'
+    by: 'By'
     message:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"

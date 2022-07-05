@@ -5,7 +5,7 @@
         <div class="card bg-gray-color text-white border-dark p-3">
           <div class="card-body">
             <h4 class="card-title"><%= voice.description %></h4>
-            <p class="card-text">By <%= voice.user.name %></p>
+            <p class="card-text"><%= (t 'defaults.by') %> <%= voice.user.name %></p>
           </div>
         </div>
       <% end %>

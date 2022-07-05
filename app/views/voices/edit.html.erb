@@ -5,7 +5,7 @@
   </div>
   <div class="mb-4 h5 text-break text-center">
     <% unless @voice.user.role == "guest" %>
-      <%= (t '.by') %> <%= @voice.user.name %>
+      <%= (t 'defaults.by') %> <%= @voice.user.name %>
     <% end %>
   </div>
   <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 pb-4">
