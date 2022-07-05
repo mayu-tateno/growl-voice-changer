@@ -6,7 +6,7 @@
           <div class="card-body">
             <h4 class="card-title"><%= voice.description %></h4>
             <% unless voice.user.role == "guest" %>
-              <p class="card-text"><%= (t 'defaults.by') %> <%= voice.user.name %></p>
+              <p class="card-text"><%= (t 'defaults.by') %><%= voice.user.name %></p>
             <% end %>
           </div>
         </div>
