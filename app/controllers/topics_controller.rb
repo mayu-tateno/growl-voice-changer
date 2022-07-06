@@ -7,9 +7,9 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(topic_params)
 
     if @topic.save
-      redirect_to root_path, dark: 'お題を作成しました'
+      redirect_to root_path, dark: t('defaults.message.created', item: Topic.model_name.human)
     else
-      flash.now[:danger] = 'お題作成に失敗しました'
+      flash.now[:danger] = t('defaults.message.not_created', item: Topic.model_name.human)
       render :new
     end
   end
