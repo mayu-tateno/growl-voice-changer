@@ -54,6 +54,10 @@ ja:
       update_button: '更新する'
     index:
       voice_not_found_message: 'まだ投稿音声がありません'
+  topics:
+    new:
+      title: 'お題投稿'
+      post: '投稿する'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
