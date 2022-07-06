@@ -5,6 +5,10 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build
   end
 
+  def index
+    @pagy, @topics = pagy(Topic.all.includes(:user).order(created_at: :desc))
+  end
+
   def create
     @topic = current_user.topics.build(topic_params)
 
