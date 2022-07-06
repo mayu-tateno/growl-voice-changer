@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :require_login, only: %i[new]
+
   def new
     @topic = current_user.topics.build
   end

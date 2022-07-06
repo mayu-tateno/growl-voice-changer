@@ -20,6 +20,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '本当に削除しますか？'
+      please_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
