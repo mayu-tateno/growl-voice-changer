@@ -6,7 +6,7 @@
     <%= form_with model: @topic, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.text_field :body, class: 'form-control' %>
-      <%= f.submit (t '.post'), class: 'btn btn-primary d-block mx-auto rounded-pill my-4' %>
+      <%= f.submit (t '.post'), class: 'btn btn-primary d-block mx-auto rounded-pill my-4', data: { confirm: (t '.post_confirmation') } %>
     <% end %>
   </div>
 </div>

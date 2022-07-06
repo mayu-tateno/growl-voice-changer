@@ -59,6 +59,7 @@ ja:
     new:
       title: 'お題投稿'
       post: '投稿する'
+      post_confirmation: "一度投稿されたお題は編集・削除ができません。\r\n投稿しますか？"
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
