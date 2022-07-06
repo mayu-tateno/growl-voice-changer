@@ -54,7 +54,7 @@ ja:
       title: '編集'
       update_button: '更新する'
     index:
-      voice_not_found_message: 'まだ投稿音声がありません'
+      voice_not_found_message: 'まだ音声がありません...ぜひ使ってみてね！'
   topics:
     new:
       title: 'お題投稿'
