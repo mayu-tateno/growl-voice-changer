@@ -1,0 +1,16 @@
+<div class="container-fluid bg-dark text-white">
+  <div class="d-flex justify-content-center">
+    <h2 class="pt-5 mb-3"><%= (t '.title') %></h2>
+  </div>
+  <div class="text-center mb-5">
+    <h5><%= (t '.description_for_topics') %></h5>
+    <p><%= (t '.notice_about_post') %></p>
+  </div>
+  <div class="col-10 offset-1 pb-4">
+    <%= form_with model: @topic, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.text_field :body, class: 'form-control' %>
+      <%= f.submit (t '.post'), class: 'btn btn-primary d-block mx-auto rounded-pill my-4', data: { confirm: (t '.post_confirmation') } %>
+    <% end %>
+  </div>
+</div>

@@ -3,6 +3,7 @@ ja:
     models:
       user: 'ユーザー'
       voice: '音声'
+      topic: 'お題'
     attributes:
       user:
         email: 'メールアドレス'
@@ -14,6 +15,8 @@ ja:
         growl_voice: 'デスボ'
         description: '内容'
         status: '公開状況'
+      topic:
+        body: 'お題'
 
   enums:
     user:
