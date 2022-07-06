@@ -62,6 +62,9 @@ ja:
       post_confirmation: "一度投稿されたお題は編集・削除ができません。\r\n投稿しますか？"
       description_for_topics: 'デスボイスで言ったら面白そうな言葉や、こんな時デスボイスでどう返す？といったお題を投稿できます。'
       notice_about_post: '※お題は投稿された後では編集・削除ができません。よく確認してからご投稿ください。'
+    index:
+      title: '〜お題一覧〜'
+      topic_not_found_message: 'まだお題は投稿されていません'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
