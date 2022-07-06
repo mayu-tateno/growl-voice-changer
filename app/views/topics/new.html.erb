@@ -6,7 +6,7 @@
       <h5><%= (t '.description_for_topics') %></h5>
       <p><%= (t '.notice_about_post') %></p>
     </div>
-  <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 pb-4">
+  <div class="col-10 offset-1 pb-4">
     <%= form_with model: @topic, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.text_field :body, class: 'form-control' %>
