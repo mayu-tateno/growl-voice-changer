@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="m-2">
+    <div class="topic-id-<%= topic.id %>">
+      <%= link_to '#', class: 'text-decoration-none' do %>
+        <div class="card bg-gray-color text-white border-dark p-3">
+          <div class="card-body">
+            <h4 class="card-title"><%= topic.body %></h4>
+            <p class="card-text"><%= (t 'defaults.by') %><%= topic.user.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
