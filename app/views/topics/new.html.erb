@@ -4,6 +4,7 @@
   </div>
   <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 pb-4">
     <%= form_with model: @topic, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
       <%= f.text_field :body, class: 'form-control' %>
       <%= f.submit '投稿する', class: 'btn btn-primary d-block mx-auto rounded-pill my-4' %>
     <% end %>

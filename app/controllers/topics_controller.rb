@@ -4,9 +4,9 @@ class TopicsController < ApplicationController
   end
 
   def create
-    topic = current_user.topics.build(topic_params)
+    @topic = current_user.topics.build(topic_params)
 
-    if topic.save
+    if @topic.save
       redirect_to root_path, dark: 'お題を作成しました'
     else
       flash.now[:danger] = 'お題作成に失敗しました'
