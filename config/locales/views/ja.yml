@@ -66,6 +66,8 @@ ja:
     index:
       title: '〜お題一覧〜'
       topic_not_found_message: 'まだお題は投稿されていません'
+    show:
+      to_new_topic_answer: 'お題に回答'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
