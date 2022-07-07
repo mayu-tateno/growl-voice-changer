@@ -4,6 +4,7 @@ ja:
       user: 'ユーザー'
       voice: '音声'
       topic: 'お題'
+      answer: '回答'
     attributes:
       user:
         email: 'メールアドレス'
@@ -17,6 +18,9 @@ ja:
         status: '公開状況'
       topic:
         body: 'お題'
+      answer:
+        growl_voice: '回答のデスボ'
+        description: '内容'
 
   enums:
     user:

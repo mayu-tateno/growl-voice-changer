@@ -8,6 +8,11 @@
           <p class="card-text"><%= (t 'defaults.topic_giver') %><%= @topic.user.name %></p>
         </div>
       </div>
+      <div class="py-3">
+        <% if logged_in? %>
+          <%= link_to (t '.to_new_topic_answer'), new_topic_answer_path(@topic), class: 'btn btn-primary justify-content-center rounded-pill my-4' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

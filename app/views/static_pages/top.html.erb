@@ -14,7 +14,9 @@
         <% end %>
       </div>
       <div class="column my-2 mx-3">
-        <button type="button" class="btn btn-dark rounded-pill"><%= (t '.to_topics_list') %></button>
+        <%= link_to topics_path do %>
+          <button type="button" class="btn btn-dark rounded-pill"><%= (t '.to_topics_list') %></button>
+        <% end %>
       </div>
     </div>
   </div>
