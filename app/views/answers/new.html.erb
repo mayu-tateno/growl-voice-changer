@@ -29,7 +29,7 @@
   <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
     <%= form_with url: topic_answers_path(@topic), id: 'answer-form', local: true do |f| %>
       <%= f.hidden_field :growl_voice %>
-      <%= f.label :description, '内容' %>
+      <%= f.label :description, Answer.human_attribute_name(:description) %>
       <%= f.text_field :description, class: 'form-control', id: 'description-form' %>
     <% end %>
   </div>
