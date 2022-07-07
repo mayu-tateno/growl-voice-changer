@@ -13,6 +13,7 @@ ja:
     inquiry: 'お問い合わせ'
     copyright: 'Copyright © 2022. デスボイスチェンジャー'
     by: 'By '
+    topic_giver: '出題者 '
     message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
