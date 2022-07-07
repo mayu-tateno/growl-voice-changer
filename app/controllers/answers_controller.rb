@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  before_action :require_login, only: %i[new]
+
   def new
     @topic = Topic.find(params[:topic_id])
   end
