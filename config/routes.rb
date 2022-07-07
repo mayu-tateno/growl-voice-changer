@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :voices
   resources :topics, only: %i[new create index show]
+  resources :answers, only: %i[new create]
 end
