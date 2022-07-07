@@ -71,6 +71,7 @@ ja:
   answers:
     new:
       title: 'お題に回答！'
+      post: '投稿する'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
