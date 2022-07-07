@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
     if answer.save
       render json: { url: root_url }
     else
-      render json: { url: new_answer_path }
+      render json: { url: new_topic_answer_path(topic) }
     end
   end
 
