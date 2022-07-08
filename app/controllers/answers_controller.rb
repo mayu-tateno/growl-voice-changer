@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
 
   def create
     topic = Topic.find(params[:topic_id])
-    answer = current_user.answers.build(answer_params.merge(topic_id: topic.id))
+    answer = current_user.answers.build(answer_params)
 
     if answer.save
       render json: { url: topic_answer_path(topic, answer) }
@@ -24,6 +24,6 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.permit(:growl_voice, :description)
+    params.permit(:growl_voice, :description, :topic_id)
   end
 end
