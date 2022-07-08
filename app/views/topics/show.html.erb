@@ -11,6 +11,8 @@
       <div class="py-3">
         <% if logged_in? %>
           <%= link_to (t '.to_new_topic_answer'), new_topic_answer_path(@topic), class: 'btn btn-primary justify-content-center rounded-pill my-4' %>
+        <% else %>
+          <h5 class="my-4"><%= (t '.please_login_to_answer_the_topic') %></h5>
         <% end %>
       </div>
     </div>
