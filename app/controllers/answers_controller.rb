@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     answer = current_user.answers.build(answer_params.merge(topic_id: topic.id))
 
     if answer.save
-      render json: { url: root_url }
+      render json: { url: topic_answer_path(topic, answer) }
     else
       render json: { url: new_topic_answer_path(topic) }
     end
