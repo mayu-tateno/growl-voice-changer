@@ -13,33 +13,33 @@
     </div>
   <% end %>
   <div class="flex-column">
-        <div class="mt-5 mb-3 h3 d-flex justify-content-center">
-        <%= Answer.model_name.human %>
-      </div>
-      <div class="mb-2 h4 text-break d-flex justify-content-center">
-        <%= @answer.description %>
-      </div>
-      <div class="mb-4 h5 text-break d-flex justify-content-center">
-        <% unless @answer.user.role == "guest" %>
-          <%= (t 'defaults.by') %><%= @answer.user.name %>
-        <% end %>
-      </div>
-      <div class="py-2 d-flex justify-content-center">
-        <%= audio_tag("#{@answer.growl_voice.url}", controls: true, id: 'js-answer-show-page-player') %>
-      </div>
-      <% if logged_in? && @answer.user_id == current_user.id %>
-        <div class="mt-3 pb-5 d-flex justify-content-center">
-          <div class="mx-3">
-            <%= link_to '#' do %>
-              <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i><%= (t 'defaults.to_edit') %></button>
-            <% end %>
-          </div>
-          <div class="mx-3">
-            <%= link_to '#', method: :delete, data: { confirm: (t 'defaults.message.delete_confirm') } do %>
-            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i><%= (t 'defaults.to_delete') %></button>
-            <% end %>
-          </div>
-        </div>
+    <div class="mt-5 mb-3 h3 d-flex justify-content-center">
+      <%= Answer.model_name.human %>
+    </div>
+    <div class="mb-2 h4 text-break d-flex justify-content-center">
+      <%= @answer.description %>
+    </div>
+    <div class="mb-4 h5 text-break d-flex justify-content-center">
+      <% unless @answer.user.role == "guest" %>
+        <%= (t 'defaults.by') %><%= @answer.user.name %>
       <% end %>
+    </div>
+    <div class="py-2 d-flex justify-content-center">
+      <%= audio_tag("#{@answer.growl_voice.url}", controls: true, id: 'js-answer-show-page-player') %>
+    </div>
+    <% if logged_in? && @answer.user_id == current_user.id %>
+      <div class="mt-3 pb-5 d-flex justify-content-center">
+        <div class="mx-3">
+          <%= link_to '#' do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i><%= (t 'defaults.to_edit') %></button>
+          <% end %>
+        </div>
+        <div class="mx-3">
+          <%= link_to '#', method: :delete, data: { confirm: (t 'defaults.message.delete_confirm') } do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i><%= (t 'defaults.to_delete') %></button>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
