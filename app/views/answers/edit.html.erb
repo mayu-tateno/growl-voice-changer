@@ -1,0 +1,17 @@
+<div class="container-fluid bg-dark text-white">
+  <h2 class="py-5 d-flex justify-content-center text-center">回答編集</h2>
+  <div class="d-flex justify-content-center mb-5">
+    <%= audio_tag("#{@answer.growl_voice.url}", controls: true, id: 'js-answer-edit-page-player') %>
+  </div>
+  <div class="mb-4 h5 text-break text-center">
+    <%= (t 'defaults.by') %><%= @answer.user.name %>
+  </div>
+  <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 pb-4">
+    <%= form_with model: [@topic, @answer], local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :description, Answer.human_attribute_name(:description) %>
+      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.submit '更新する', class: 'btn btn-primary d-block mx-auto rounded-pill my-4' %>
+    <% end %>
+  </div>
+</div>
