@@ -13,7 +13,7 @@
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :description, Voice.human_attribute_name(:description) %>
       <%= f.text_field :description, class: 'form-control' %>
-      <%= f.submit (t '.update_button'), class: 'btn btn-primary d-block mx-auto rounded-pill my-4' %>
+      <%= f.submit (t 'defaults.update_button'), class: 'btn btn-primary d-block mx-auto rounded-pill my-4' %>
     <% end %>
   </div>
 </div>
