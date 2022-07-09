@@ -68,6 +68,7 @@ ja:
     show:
       to_new_topic_answer: 'お題に回答'
       please_login_to_answer_the_topic: '※お題に回答するにはログインが必要です'
+      answer_not_found_message: 'まだ投稿がありません…ぜひ気軽に回答してみてね！'
   answers:
     new:
       title: 'お題に回答！'
