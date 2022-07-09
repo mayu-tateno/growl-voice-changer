@@ -39,6 +39,11 @@ class AnswersController < ApplicationController
   end
 
   def destroy
+    @topic = Topic.find(params[:topic_id])
+    @answer = current_user.answers.find(params[:id])
+
+    @answer.destroy
+    redirect_to @topic
   end
 
   private
