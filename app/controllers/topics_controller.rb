@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :require_login, only: %i[new]
+  before_action :require_login, only: %i[new create]
 
   def new
     @topic = current_user.topics.build
