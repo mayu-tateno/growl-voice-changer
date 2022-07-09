@@ -23,6 +23,7 @@ ja:
     topic_giver: '出題者 '
     to_edit: ' 編集'
     to_delete: ' 削除'
+    update_button: '更新する'
     message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
@@ -52,7 +53,6 @@ ja:
       to_share: 'シェア画面へ'
     edit:
       title: '編集'
-      update_button: '更新する'
     index:
       voice_not_found_message: 'まだ音声がありません...ぜひ使ってみてね！'
   topics:
@@ -72,6 +72,8 @@ ja:
     new:
       title: 'お題に回答！'
       post: '投稿する'
+    edit:
+      title: '回答編集'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'

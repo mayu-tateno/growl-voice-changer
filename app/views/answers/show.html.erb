@@ -30,12 +30,12 @@
     <% if logged_in? && @answer.user_id == current_user.id %>
       <div class="py-3 d-flex justify-content-center">
         <div class="mx-3">
-          <%= link_to '#' do %>
+          <%= link_to edit_topic_answer_path(@topic, @answer) do %>
             <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i><%= (t 'defaults.to_edit') %></button>
           <% end %>
         </div>
         <div class="mx-3">
-          <%= link_to '#', method: :delete, data: { confirm: (t 'defaults.message.delete_confirm') } do %>
+          <%= link_to topic_answer_path(@topic, @answer), method: :delete, data: { confirm: (t 'defaults.message.delete_confirm') } do %>
             <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-trash"></i><%= (t 'defaults.to_delete') %></button>
           <% end %>
         </div>
