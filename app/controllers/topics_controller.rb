@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @pagy, @answers = pagy(Answer.where(topic_id: @topic.id).includes(:user).order(created_at: :desc))
   end
 
   def index
