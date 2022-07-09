@@ -19,13 +19,13 @@
   </div>
   <div class="col-10 offset-1 d-flex justify-content-center text-center pb-5">
     <div class="row col-12">
-      <h2 class="pb-3">回答</h2>
+      <h2 class="pb-3"><%= Answer.model_name.human %></h2>
       <% if @answers.present? %>
         <% @answers.each do |answer| %>
           <%= render 'answer', answer: answer, topic: @topic %>
         <% end %>
       <% else %>
-        <h5>まだ投稿がありません</h5>
+        <h5><%= (t '.answer_not_found_message') %></h5>
       <% end %>
       <div class="d-flex justify-content-center mt-3">
         <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
