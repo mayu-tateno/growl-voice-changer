@@ -70,6 +70,7 @@ ja:
       notice_about_post: '※お題は投稿された後では編集・削除ができません。よく確認してからご投稿ください。'
     index:
       title: '〜お題一覧〜'
+      to_new_topic: 'お題を投稿する'
       topic_not_found_message: 'まだお題は投稿されていません'
     show:
       to_new_topic_answer: 'お題に回答'
