@@ -17,8 +17,8 @@
           <% end %>
         </div>
         <div class="mx-3">
-          <%= link_to '#', method: :delete, data: { confirm: "本当に退会しますか？" } do %>
-            <button class="btn btn-primary mx-auto rounded-pill">退会する</button>
+          <%= link_to '#', method: :delete, data: { confirm: (t '.leave_confirm') } do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><%= (t '.leave_button') %></button>
           <% end %>
         </div>
       </div>
