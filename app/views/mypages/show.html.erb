@@ -8,5 +8,17 @@
           <p class="card-text">メールアドレス: <%= current_user.email %></p>
         </div>
       </div>
+      <div class="py-3 d-flex justify-content-center">
+        <div class="mx-3">
+          <%= link_to edit_mypage_path do %>
+            <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i><%= (t 'defaults.to_edit') %></button>
+          <% end %>
+        </div>
+        <div class="mx-3">
+          <%= link_to '#', method: :delete, data: { confirm: "本当に退会しますか？" } do %>
+            <button class="btn btn-primary mx-auto rounded-pill">退会する</button>
+          <% end %>
+        </div>
+      </div>
     </div>
 </div>
