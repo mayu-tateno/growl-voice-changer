@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :topics, only: %i[new create index show] do
     resources :answers, only: %i[new create show edit update destroy]
   end
+  resource :mypage, only: %i[show edit update]
 end
