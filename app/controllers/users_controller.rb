@@ -16,8 +16,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    current_user.destroy!
-    redirect_to root_url, dark: t('.success')
+    if current_user.destroy
+      redirect_to root_url, dark: t('.success')
+    else
+      redirect_to root_url, danger: t('.failed')
+    end
   end
 
   private
