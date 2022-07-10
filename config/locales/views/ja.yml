@@ -24,6 +24,9 @@ ja:
     to_edit: ' 編集'
     to_delete: ' 削除'
     update_button: '更新する'
+    topic_is: 'お題: '
+    voice_not_found_message: 'まだ音声がありません...ぜひ使ってみてね！'
+    answer_not_found_message: 'まだ投稿がありません...ぜひ気軽に回答してみてね！'
     message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
@@ -40,6 +43,9 @@ ja:
     create:
       success: 'ユーザー登録しました'
       failed: 'ユーザー登録に失敗しました'
+    destroy:
+      success: '退会しました'
+      failed: '退会処理に失敗しました'
   user_sessions:
     create:
       success: 'ログインしました'
@@ -54,7 +60,7 @@ ja:
     edit:
       title: '編集'
     index:
-      voice_not_found_message: 'まだ音声がありません...ぜひ使ってみてね！'
+      title: '〜デスボ一覧〜'
   topics:
     new:
       title: 'お題投稿'
@@ -68,13 +74,21 @@ ja:
     show:
       to_new_topic_answer: 'お題に回答'
       please_login_to_answer_the_topic: '※お題に回答するにはログインが必要です'
-      answer_not_found_message: 'まだ投稿がありません…ぜひ気軽に回答してみてね！'
   answers:
     new:
       title: 'お題に回答！'
       post: '投稿する'
     edit:
       title: '回答編集'
+  mypages:
+    show:
+      title: 'マイページ'
+      name_is: 'ユーザー名: '
+      email_is: 'メールアドレス: '
+      caution_about_leave: '※退会するとユーザー情報、ユーザーが作成した音声、回答、お題とそのお題に紐づく回答の全てが削除され復元ができません。'
+      caution_about_topics: 'お題に関しては原則として投稿したユーザーであっても変更できません。ご要望がありましたらアプリ製作者へご連絡お願いいたします。'
+      leave_confirm: '本当に退会しますか？'
+      leave_button: '退会する'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
