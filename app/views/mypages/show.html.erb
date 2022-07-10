@@ -17,7 +17,7 @@
           <% end %>
         </div>
         <div class="mx-3">
-          <%= link_to '#', method: :delete, data: { confirm: (t '.leave_confirm') } do %>
+          <%= link_to user_path(current_user), method: :delete, data: { confirm: (t '.leave_confirm') } do %>
             <button class="btn btn-primary mx-auto rounded-pill"><%= (t '.leave_button') %></button>
           <% end %>
         </div>

@@ -42,6 +42,8 @@ ja:
     create:
       success: 'ユーザー登録しました'
       failed: 'ユーザー登録に失敗しました'
+    destroy:
+      success: '退会しました'
   user_sessions:
     create:
       success: 'ログインしました'

@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    current_user.destroy!
+    redirect_to root_url, dark: t('.success')
+  end
+
   private
 
   def user_params
