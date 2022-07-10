@@ -5,7 +5,7 @@
         <div class="card bg-gray-color text-white border-dark p-3">
           <div class="card-body">
             <h4 class="card-title"><%= answer.description %></h4>
-          <div class="card-text">お題: <%= answer.topic.body %></div>
+          <div class="card-text"><%= (t 'defaults.topic_is') %><%= answer.topic.body %></div>
           </div>
         </div>
       <% end %>
