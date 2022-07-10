@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="m-2">
+    <div class="answer-id-<%= answer.id %>">
+      <%= link_to topic_answer_path(answer.topic_id, answer), class: 'text-decoration-none' do %>
+        <div class="card bg-gray-color text-white border-dark p-3">
+          <div class="card-body">
+            <h4 class="card-title"><%= answer.description %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

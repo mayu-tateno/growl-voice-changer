@@ -3,5 +3,6 @@ class MypagesController < ApplicationController
 
   def show
     @pagy, @voices = pagy(current_user.voices)
+    @answers = current_user.answers
   end
 end
