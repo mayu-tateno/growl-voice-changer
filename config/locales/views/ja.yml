@@ -75,6 +75,11 @@ ja:
       post: '投稿する'
     edit:
       title: '回答編集'
+  mypages:
+    show:
+      title: 'マイページ'
+      name_is: 'ユーザー名: '
+      email_is: 'メールアドレス: '
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'
