@@ -28,7 +28,7 @@
           <%= render 'voice', voice: voice %>
         <% end %>
       <% else %>
-        <h5>まだ音声を作成していません</h5>
+        <h5><%= (t 'defaults.voice_not_found_message') %></h5>
       <% end %>
       <div class="d-flex justify-content-center mt-3">
         <%== pagy_bootstrap_nav(@pagy_voices) if @pagy_voices.pages > 1 %>
@@ -39,7 +39,7 @@
           <%= render 'answer', answer: answer %>
         <% end %>
       <% else %>
-        <h5>まだ回答を作成していません</h5>
+        <h5><%= (t 'defaults.answer_not_found_message') %></h5>
       <% end %>
       <div class="d-flex justify-content-center mt-3">
         <%== pagy_bootstrap_nav(@pagy_answers) if @pagy_answers.pages > 1 %>

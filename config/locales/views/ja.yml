@@ -24,6 +24,8 @@ ja:
     to_edit: ' 編集'
     to_delete: ' 削除'
     update_button: '更新する'
+    voice_not_found_message: 'まだ音声がありません...ぜひ使ってみてね！'
+    answer_not_found_message: 'まだ投稿がありません...ぜひ気軽に回答してみてね！'
     message:
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
@@ -54,7 +56,7 @@ ja:
     edit:
       title: '編集'
     index:
-      voice_not_found_message: 'まだ音声がありません...ぜひ使ってみてね！'
+      title: '〜デスボ一覧〜'
   topics:
     new:
       title: 'お題投稿'
