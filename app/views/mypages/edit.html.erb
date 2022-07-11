@@ -1,12 +1,12 @@
 <div class="container-fluid bg-dark text-white text-center py-5">
-  <h2>ユーザー情報編集</h2>
+  <h2><%= (t '.title') %></h2>
   <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-5">
     <%= form_with model: @user, url: mypage_path, local: true do |f| %>
       <%= f.label :name, User.human_attribute_name(:name) %>
       <%= f.text_field :name, class: 'form-control' %>
       <%= f.label :email, User.human_attribute_name(:email) %>
       <%= f.email_field :email, class: 'form-control' %>
-      <%= f.submit '更新する', class: 'btn btn-primary rounded-pill mx-auto my-3' %>
+      <%= f.submit (t 'defaults.update_button'), class: 'btn btn-primary rounded-pill mx-auto my-3' %>
     <% end %>
   </div>
 </div>
