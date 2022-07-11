@@ -14,9 +14,9 @@ class MypagesController < ApplicationController
     @user = User.find(current_user.id)
 
     if @user.update(user_params)
-      redirect_to mypage_path, dark: 'ユーザー情報を更新しました'
+      redirect_to mypage_path, dark: (t 'defaults.message.updated', item: (t 'defaults.user_data'))
     else
-      flash.now[:danger] = 'ユーザー情報の更新に失敗しました'
+      flash.now[:danger] = (t 'defaults.message.not_updated', item: (t 'defaults.user_data'))
       render :edit
     end
   end
