@@ -8,6 +8,7 @@ ja:
     voices_list: 'デスボ一覧'
     topics_list: 'お題一覧'
     my_page: 'マイページ'
+    user_data: 'ユーザー情報'
     terms_of_services: '利用規約'
     privacy_policy: 'プライバシーポリシー'
     inquiry: 'お問い合わせ'
@@ -90,6 +91,8 @@ ja:
       caution_about_topics: 'お題に関しては原則として投稿したユーザーであっても変更できません。ご要望がありましたらアプリ製作者へご連絡お願いいたします。'
       leave_confirm: '本当に退会しますか？'
       leave_button: '退会する'
+    edit:
+      title: 'ユーザー情報編集'
   static_pages:
     top:
       catch_phrase: 'デスボをあなたのとなりに'

@@ -1,0 +1,13 @@
+<div class="container-fluid bg-dark text-white py-5">
+  <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+    <h2 class='text-center pb-5'><%= (t '.title') %></h2>
+    <%= form_with model: @user, url: mypage_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name, User.human_attribute_name(:name) %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :email, User.human_attribute_name(:email) %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.submit (t 'defaults.update_button'), class: 'btn btn-primary rounded-pill d-block mx-auto my-3' %>
+    <% end %>
+  </div>
+</div>
