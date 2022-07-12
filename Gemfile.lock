@@ -72,6 +72,9 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-carrierwave (0.6.0)
+      administrate (< 1.0.0)
+      rails (>= 4.2, < 8)
     ast (2.4.2)
     bcrypt (3.1.17)
     better_errors (2.9.1)
@@ -389,6 +392,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-carrierwave
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.4)
