@@ -7,6 +7,7 @@
 module Supervisor
   class ApplicationController < Administrate::ApplicationController
     before_action :basic_auth
+    protect_from_forgery with: :exception
 
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
