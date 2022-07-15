@@ -4,8 +4,11 @@ Rails.application.routes.draw do
       resources :voices
       resources :answers
       resources :users
+      get '/login', to: 'sessions#new'
+      post '/login', to: 'sessions#create'
+      get '/logout', to: 'sessions#logout'
 
-      root to: "topics#index"
+      root to: 'sessions#new'
     end
   root 'static_pages#top'
 

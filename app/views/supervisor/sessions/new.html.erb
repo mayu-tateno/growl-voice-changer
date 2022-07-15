@@ -1,0 +1,18 @@
+<div class="container-fluid py-5 bg-dark text-white">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-5">
+      <h1 class="text-center"><%= (t 'defaults.login') %></h1>
+      <%= form_with url: supervisor_login_path, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <%= f.submit (t 'defaults.login'), class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>
+      <% end %>
+    </div>
+  </div>
+</div>
