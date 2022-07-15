@@ -17,7 +17,8 @@ class UserDashboard < Administrate::BaseDashboard
     salt: Field::String,
     name: Field::String,
     role: Field::Select.with_options(searchable: false, collection: lambda { |field|
-                                                                      field.resource.class.send(field.attribute.to_s.pluralize).keys
+                                                                      field.resource.class
+                                                                      .send(field.attribute.to_s.pluralize).keys
                                                                     }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime

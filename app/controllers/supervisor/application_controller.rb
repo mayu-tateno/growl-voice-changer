@@ -20,7 +20,8 @@ module Supervisor
 
     def basic_auth
       authenticate_or_request_with_http_basic do |username, password|
-        username == Rails.application.credentials.dig(:basic_auth, :username) && password == Rails.application.credentials.dig(:basic_auth, :password)
+        username == Rails.application.credentials.dig(:basic_auth, :username) &&
+          password == Rails.application.credentials.dig(:basic_auth, :password)
       end
     end
 
