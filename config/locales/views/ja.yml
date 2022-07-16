@@ -96,7 +96,6 @@ ja:
       title: 'ユーザー情報編集'
   static_pages:
     top:
-      catch_phrase: 'デスボをあなたのとなりに'
       to_change_page: '加工する！'
       to_voices_list: 'デスボ一覧'
       to_topics_list: 'お題一覧へ'
