@@ -1,5 +1,5 @@
 module Supervisor
-  class SessionsController < ApplicationController
+  class SessionsController < Supervisor::ApplicationController
     skip_before_action :login_required_as_admin
 
     def new; end
