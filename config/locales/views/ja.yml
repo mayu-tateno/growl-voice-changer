@@ -1,6 +1,7 @@
 ja:
   defaults:
     app_name: 'デスボイスチェンジャー'
+    catch_phrase: 'デスボをあなたのとなりに'
     login: 'ログイン'
     register: '新規登録'
     logout: 'ログアウト'
