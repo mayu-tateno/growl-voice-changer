@@ -31,7 +31,8 @@ class AnswersController < ApplicationController
     @answer = current_user.answers.find(params[:id])
 
     if @answer.update(answer_params_for_update)
-      redirect_to topic_answer_path(@topic, @answer), dark: (t 'defaults.message.updated', item: Answer.human_attribute_name(:description))
+      redirect_to topic_answer_path(@topic, @answer),
+                  dark: (t 'defaults.message.updated', item: Answer.human_attribute_name(:description))
     else
       flash.now[:danger] = (t 'defaults.message.not_updated', item: Answer.human_attribute_name(:description))
       render :edit

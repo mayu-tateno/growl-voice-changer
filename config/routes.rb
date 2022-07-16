@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :supervisor do
+    resources :topics
+    resources :voices
+    resources :answers
+    resources :users
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    get '/logout', to: 'sessions#logout'
+
+    root to: 'sessions#new'
+  end
   root 'static_pages#top'
 
   get 'login', to: 'user_sessions#new'
