@@ -35,7 +35,7 @@ gem 'rails-i18n'
 # Authentication
 gem 'sorcery'
 
-# file upload
+# File Upload
 gem 'carrierwave'
 gem 'fog-aws'
 
@@ -47,6 +47,9 @@ gem 'administrate'
 gem 'administrate-field-carrierwave'
 
 gem 'meta-tags'
+
+# Dynamic OGP
+gem 'cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
