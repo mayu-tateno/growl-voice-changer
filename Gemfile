@@ -48,7 +48,7 @@ gem 'administrate-field-carrierwave'
 
 gem 'meta-tags'
 
-# Dynamic OGP
+# For Dynamic OGP
 gem 'cloudinary'
 
 group :development, :test do
