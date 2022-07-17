@@ -16,6 +16,7 @@ module ApplicationHelper
       ],
       og: {
         site_name: :site,
+        title: :site,
         description: :description,
         type: 'website',
         url: :canonical,
