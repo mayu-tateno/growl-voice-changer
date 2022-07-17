@@ -20,11 +20,11 @@ module ApplicationHelper
         type: 'website',
         url: :canonical,
         image: image_url('normal_ogp.png'),
-        locale: 'ja_JP',
+        locale: 'ja_JP'
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@tateno2321201',
+        site: '@tateno2321201'
       }
     }
   end
