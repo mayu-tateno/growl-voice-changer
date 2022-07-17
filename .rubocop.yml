@@ -47,10 +47,10 @@ Naming/AccessorMethodName:
 Metrics/LineLength:
   Enable: false
 
-# メソッドの行数を20行までにする
+# メソッドの行数を25行までにする
 Metrics/MethodLength:
   CountComments: false
-  Max: 20
+  Max: 25
 
 Metrics/BlockLength:
   Max: 50
