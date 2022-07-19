@@ -5,7 +5,6 @@ module ApplicationHelper
     {
       site: (t 'defaults.app_name'),
       title: (t 'defaults.catch_phrase'),
-      reverse: false,
       charset: 'utf-8',
       description: 'マイクで拾った音声をデスボイスに加工し録音するアプリです。※Chrome推奨。Safariなど一部のブラウザやお使いのデバイスによってはうまく録音できない場合があります。',
       keywords: 'デスボイス, デスボ, ボイスチェンジャー, デスボイスチェンジャー',

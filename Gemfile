@@ -35,7 +35,7 @@ gem 'rails-i18n'
 # Authentication
 gem 'sorcery'
 
-# file upload
+# File Upload
 gem 'carrierwave'
 gem 'fog-aws'
 
