@@ -44,6 +44,6 @@
     <% end %>
   </div>
   <%= link_to "https://twitter.com/share?url=#{request.url}&text=お題「#{@answer.topic.body}」に回答&hashtags=デスボイス,ボイスチェンジャー,デスボイスチェンジャー", target: '_blank', class: 'btn btn-dark mx-auto rounded-pill mt-3 twitter-color text-white' do %>
-    <i class="fab fa-twitter"></i> シェアする
+    <i class="fab fa-twitter"></i> <%= (t 'defaults.to_share') %>
   <% end %>
 </div>

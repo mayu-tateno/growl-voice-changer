@@ -31,7 +31,7 @@
         </div>
       <% end %>
       <%= link_to "https://twitter.com/share?url=#{request.url}&text=「#{@voice.description}」をデスボイスに加工してみた&hashtags=デスボイス,ボイスチェンジャー,デスボイスチェンジャー", target: '_blank', class: 'btn btn-dark mx-auto rounded-pill mt-3 twitter-color text-white' do %>
-        <i class="fab fa-twitter"></i> シェアする
+        <i class="fab fa-twitter"></i> <%= (t 'defaults.to_share') %>
       <% end %>
     </div>
   </div>
