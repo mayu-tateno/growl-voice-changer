@@ -1,8 +1,8 @@
 <% set_meta_tags og: {image: "https://res.cloudinary.com/hau5t9i0p/image/upload/l_text:wlfszpoyjjija9nply3b.woff2_60:#{@voice.description},w_800,c_fit/v1658125205/bpqcf2msyto36hky7suz.png" } %>
-<div class="container-fluid bg-dark text-white">
+<div class="container-fluid bg-dark text-white py-5">
   <div class="d-flex justify-content-center text-center">
     <div class="flex-column">
-      <div class="mt-5 mb-4 h3">
+      <div class="mb-4 h3">
         <%= Voice.human_attribute_name(:description) %>
       </div>
       <div class="mb-4 h4 text-break">
@@ -13,11 +13,11 @@
           <%= (t 'defaults.by') %><%= @voice.user.name %>
         <% end %>
       </div>
-      <div class="py-5">
+      <div class="pt-4 pb-4">
         <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
       </div>
       <% if logged_in? && @voice.user_id == current_user.id %>
-        <div class="pb-5 d-flex justify-content-center">
+        <div class="pb-4 d-flex justify-content-center">
           <div class="mx-3">
             <%= link_to edit_voice_path(@voice) do %>
               <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i><%= (t 'defaults.to_edit') %></button>
@@ -29,6 +29,9 @@
             <% end %>
           </div>
         </div>
+      <% end %>
+      <%= link_to "https://twitter.com/share?url=#{request.url}&text=「#{@voice.description}」をデスボイスに加工してみた&hashtags=デスボイス,ボイスチェンジャー,デスボイスチェンジャー", target: '_blank', class: 'btn btn-dark mx-auto rounded-pill mt-3 twitter-color text-white' do %>
+        <i class="fab fa-twitter"></i> シェアする
       <% end %>
     </div>
   </div>
