@@ -17,7 +17,7 @@
         <%= audio_tag("#{@voice.growl_voice.url}", controls: true, id: 'js-show-page-player') %>
       </div>
       <% if logged_in? && @voice.user_id == current_user.id %>
-        <div class="pb-4 d-flex justify-content-center">
+        <div class="pb-4 d-flex justify-content-center btn-group">
           <div class="mx-3">
             <%= link_to edit_voice_path(@voice) do %>
               <button class="btn btn-primary mx-auto rounded-pill"><i class="fas fa-pen"></i><%= (t 'defaults.to_edit') %></button>
