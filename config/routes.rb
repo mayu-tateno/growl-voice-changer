@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   get '/privacy_policy', to: 'static_pages#privacy_policy'
   get '/terms', to: 'static_pages#terms'
+  get '/inquiry', to: 'static_pages#inquiry'
 
   resources :users, only: %i[new create destroy]
   resources :voices
