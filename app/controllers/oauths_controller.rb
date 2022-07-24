@@ -9,9 +9,7 @@ class OauthsController < ApplicationController
       redirect_to root_path, dark: "#{provider.titleize}でログインしました"
     else
       begin
-        binding.pry
         @user = create_from(provider)
-        binding.pry
         reset_session
         auto_login(@user)
         redirect_to root_path, dark: "#{provider.titleize}でログインしました"
