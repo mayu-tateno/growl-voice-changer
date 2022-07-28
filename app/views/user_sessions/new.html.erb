@@ -13,9 +13,13 @@
         </div>
         <%= f.submit (t 'defaults.login'), class: 'btn btn-primary d-block mx-auto rounded-pill text-black my-3' %>
       <% end %>
-
       <div class="text-center">
-        <%= link_to (t 'defaults.register'), new_user_path, class: 'text-white text-decoration-none' %>
+        <%= link_to auth_at_provider_path(provider: :twitter), class: 'btn btn-dark mx-auto twitter-color rounded-pill my-3' do %>
+          <i class="fab fa-twitter"></i> Twitterログイン
+        <% end %>
+      </div>
+      <div class="text-center">
+        <%= link_to (t '.to_register'), new_user_path, class: 'text-white text-decoration-none my-5' %>
       </div>
     </div>
   </div>

@@ -50,6 +50,8 @@ ja:
       success: '退会しました'
       failed: '退会処理に失敗しました'
   user_sessions:
+    new:
+      to_register: '新規登録はこちら'
     create:
       success: 'ログインしました'
       failed: 'ログインに失敗しました'

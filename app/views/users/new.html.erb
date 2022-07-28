@@ -24,6 +24,11 @@
       <% end %>
 
       <div class="text-center">
+        <%= link_to auth_at_provider_path(provider: :twitter), class: 'btn btn-dark mx-auto twitter-color rounded-pill my-3' do %>
+          <i class="fab fa-twitter"></i> Twitterログイン
+        <% end %>
+      </div>
+      <div class="text-center">
         <%= link_to 'ログインページ', login_path, class: 'text-white text-decoration-none' %>
       </div>
     </div>

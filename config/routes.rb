@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get '/privacy_policy', to: 'static_pages#privacy_policy'
   get '/terms', to: 'static_pages#terms'
   get '/inquiry', to: 'static_pages#inquiry'
+  post "oauth/callback", to: "oauths#callback"
+  get "oauth/callback", to: "oauths#callback"
+  get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
 
   resources :users, only: %i[new create destroy]
   resources :voices
