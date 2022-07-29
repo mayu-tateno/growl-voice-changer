@@ -26,10 +26,10 @@
     <button id="js-reset-button" class="btn btn-primary rounded-pill d-none"><%= (t 'defaults.reset') %></button>
   </div>
 
-  <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+  <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 py-4">
     <%= form_with url: topic_answers_path(@topic), id: 'answer-form', local: true do |f| %>
       <%= f.hidden_field :growl_voice %>
-      <%= f.label :description, Answer.human_attribute_name(:description) %>
+      <%= f.label :description, '内容 ※音声にタイトルをつけるとしたら？' %>
       <%= f.text_field :description, class: 'form-control', id: 'description-form' %>
     <% end %>
   </div>
