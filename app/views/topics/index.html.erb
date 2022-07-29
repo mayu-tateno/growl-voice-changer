@@ -1,5 +1,5 @@
 <div class="container-fluid bg-dark text-white text-center py-5">
-    <h2 ><%= (t '.title') %></h2>
+    <h2><%= (t '.title') %></h2>
     <% if logged_in? %>
       <%= link_to (t '.to_new_topic'), new_topic_path, class: 'btn btn-primary mx-auto rounded-pill my-3' %>
     <% end %>
