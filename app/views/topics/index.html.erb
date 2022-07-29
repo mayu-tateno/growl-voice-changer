@@ -1,8 +1,8 @@
 <div class="container-fluid bg-dark text-white text-center py-5">
     <h2><%= (t '.title') %></h2>
     <div class="py-4">
-      <h5>お題にデスボイスで答える大喜利です。</h5>
-      <p>※ログインするとお題と回答を投稿できます。</p>
+      <h5><%= (t '.topics_description') %></h5>
+      <p><%= (t '.notice_about_topics') %></p>
     </div>
     <% if logged_in? %>
       <%= link_to (t '.to_new_topic'), new_topic_path, class: 'btn btn-primary mx-auto rounded-pill mt-1 mb-5' %>
