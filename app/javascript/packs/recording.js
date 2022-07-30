@@ -266,7 +266,7 @@ jsVoiceSaveButton.onclick = function() {
     }).then(response => {
       let data = response.data;
       if(data.result == 'failed') {
-        document.getElementById('js-error-message').innerHTML = '<div class="alert alert-danger">' +
+        document.getElementById('js-voice-error-message').innerHTML = '<div class="alert alert-danger">' +
                                                                 '<ul class="error-message-list">' +
                                                                 '<li>内容を入力してください</li>' +
                                                                 '</ul>' +
