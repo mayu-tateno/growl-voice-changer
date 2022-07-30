@@ -74,7 +74,9 @@ ja:
       description_for_topics: 'デスボイスで言ったら面白そうな言葉や、こんな時デスボイスでどう返す？といったお題を投稿できます。'
       notice_about_post: '※お題は投稿された後では編集・削除ができません。よく確認してからご投稿ください。'
     index:
-      title: '〜お題一覧〜'
+      title: '大喜利！お題で「吠えて！」'
+      topics_description: 'お題にデスボイスで答える大喜利です。'
+      notice_about_topics: '※ログインするとお題と回答を投稿できます。'
       to_new_topic: 'お題を投稿する'
       topic_not_found_message: 'まだお題は投稿されていません'
     show:
