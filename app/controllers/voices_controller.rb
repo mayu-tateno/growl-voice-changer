@@ -27,7 +27,7 @@ class VoicesController < ApplicationController
     if voice.save
       render json: { url: voice_path(voice), result: 'success' }
     else
-      render json: { url: new_voice_path, result: 'failed' }
+      render json: { result: 'failed' }
     end
   end
 
