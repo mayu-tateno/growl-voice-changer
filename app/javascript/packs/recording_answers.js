@@ -265,7 +265,16 @@ jsAnswerSaveButton.onclick = function() {
       }
     }).then(response => {
       let data = response.data;
-      window.location.href = data.url;
+      if(data.result == 'failed') {
+        document.getElementById('js-answer-error-message').innerHTML = '<div class="alert alert-danger">' +
+                                                                '<ul class="error-message-list">' +
+                                                                '<li>内容を入力してください</li>' +
+                                                                '</ul>' +
+                                                                '</div>' ;
+        jsAnswerSaveButton.disabled = false;
+      }else{
+        window.location.href = data.url;
+      }
     }).catch(error => {
       console.log(error.response);
     });

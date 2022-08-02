@@ -15,9 +15,9 @@ class AnswersController < ApplicationController
     answer = current_user.answers.build(answer_params)
 
     if answer.save
-      render json: { url: topic_answer_path(topic, answer) }
+      render json: { url: topic_answer_path(topic, answer), result: 'success' }
     else
-      render json: { url: new_topic_answer_path(topic) }
+      render json: { result: 'failed' }
     end
   end
 
