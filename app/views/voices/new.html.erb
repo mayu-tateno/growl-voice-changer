@@ -1,5 +1,27 @@
-<div class="container-fluid bg-dark text-white">
-  <h1 class="text-center py-4"><%= (t '.title') %></h1>
+<div class="container-fluid bg-dark text-white p-5">
+  <h1 class="text-center"><%= (t '.title') %></h1>
+  <div class="text-center">
+    <a href="" data-bs-toggle="modal" data-bs-target="#noticeModal">
+      <i class="fas fa-exclamation-circle text-white fa-lg"></i>
+    </a>
+    <div class="modal fade text-dark" id="noticeModal" tabindex="-1" aria-labelledby="noticeModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4>注意事項</h4>
+            <p>ブラウザはChrome推奨です。Safariなど一部のブラウザやお使いのデバイスによってはうまく録音できない場合があります。</p>
+            <p>声のみを拾って加工できずマイクが拾った音全てにデスボイス加工を施してしまうため、爆撃音のような雑音のみの音声になってしまう場合があります。</p>
+            <p>できるだけ静かな環境でお試しください。</p>
+            <button type="button" class="btn btn-primary rounded-pill" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="d-flex justify-content-center py-4">
     <audio id="js-player" controls></audio>
     <a id="js-download-link" type="hidden"></a>
@@ -24,13 +46,11 @@
       <%= f.text_field :description, class: 'form-control', id: 'description-form' %>
     <% end %>
   </div>
-  <div class="pb-5">
-    <% if logged_in? %>
-      <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.save_as_logged_in_user') %></button>
-    <% else %>
-      <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.to_share') %></button>
-    <% end %>
-  </div>
+  <% if logged_in? %>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.save_as_logged_in_user') %></button>
+  <% else %>
+    <button id="js-voice-save-button" class="btn btn-primary d-block mx-auto rounded-pill text-black my-3 d-none"><%= (t '.to_share') %></button>
+  <% end %>
 </div>
 
 <%= javascript_pack_tag 'recording' %>
