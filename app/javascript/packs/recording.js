@@ -268,7 +268,7 @@ jsVoiceSaveButton.onclick = function() {
       if(data.result == 'failed') {
         document.getElementById('js-voice-error-message').innerHTML = '<div class="alert alert-danger">' +
                                                                 '<ul class="error-message-list">' +
-                                                                '<li>内容を入力してください</li>' +
+                                                                '<li>内容を30字以内で入力してください</li>' +
                                                                 '</ul>' +
                                                                 '</div>' ;
         jsVoiceSaveButton.disabled = false;
